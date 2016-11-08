@@ -25,12 +25,12 @@ User Journey:
 
 4. Device management (gear icon) (have on that is already connected)
 	1. Add device
-		*Add nickname
-		*Go into device management
-		*add serial number
-		*give confirmation (talking to the device)
-		*then a script runs to connect to database
-		*if Fails "It cannot find device"
+		* Add nickname
+		* Go into device management
+		* add serial number
+		* give confirmation (talking to the device)
+		* then a script runs to connect to database
+		* if Fails "It cannot find device"
 
 PAGE DESIGN: 
 -Something clean and similar to Nest website
@@ -45,8 +45,8 @@ PAGE DESIGN:
   3. Unconnected table - one to one; serial number to the physical device (it would be deleted of the unconnected to the device table)
 
 The Device will query: 
-	*Post: Am I an authorized device and it will take the command (on/off)
-	*Get: Listening for status change
+	* Post: Am I an authorized device and it will take the command (on/off)
+	* Get: Listening for status change
 
 
 
