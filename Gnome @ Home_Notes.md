@@ -1,4 +1,4 @@
-####Gnome @ Home
+##Gnome @ Home
 
 ###FRONT END
 User Journey: 
@@ -34,6 +34,8 @@ User Journey:
 
 PAGE DESIGN: 
 -Something clean and similar to Nest website
+
+[Trello link](https://trello.com/b/yoNf9XeJ/tasks-gnome-home)
 
 ####Backend: 
 
