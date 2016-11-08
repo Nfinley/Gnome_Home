@@ -4,6 +4,6 @@ App that enables users to sync a micro-controller to their user dashboard to con
 >"You always have a Gnome at Home wherever you roam!"
 
 ----
-Created as part of the UT CODING BOOTCAMP. November 2016. 
+_Created as part of the UT CODING BOOTCAMP. November 2016. 
 
-Team members: Eric Steinberg, Saidi Granados, Christine Baba, Matt Holland and Nigel Finley
+_Team members: Eric Steinberg, Saidi Granados, Christine Baba, Matt Holland and Nigel Finley
