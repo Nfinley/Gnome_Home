@@ -44,6 +44,27 @@ module.exports = {
     			    		
     	})
   	},
+
+  	viewUser:function (request, response){
+
+
+  		return GnomeUsersAPI.find().populate('gnomes')
+  		.exec(function (error, result) {
+    		if(error){
+    			return console.log(error);
+    		}
+    		else{
+    			return response.json(result);
+    		}
+
+
+
+
+    		
+
+    	});
+
+  	}
 	
 };
 
