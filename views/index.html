@@ -19,7 +19,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
 
     <!-- Customer Stylesheet -->    
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
 
   </head>
   <body class="bg-faded">
@@ -34,28 +34,26 @@
 </header>
 <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-        <button class="navbar-toggler hidden-md-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+        <button class="navbar-toggler hidden-md-up float-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
             ☰
         </button>
-        <a class="navbar-brand page-scroll" href="#first"></a>
+        <a class="navbar-brand page-scroll" href="#first">Gnome</a>
         <div class="collapse navbar-toggleable-sm" id="collapsingNavbar">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav float-xs-right">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#one"></a>
+                    <a class="nav-link page-scroll" href="#one">Our Gnomes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#two">Flexbox</a>
+                    <a class="nav-link page-scroll" href="#two">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#three">5 Tiers</a>
+                    <a class="nav-link page-scroll" href="#three">Contact Us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#four">More</a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav pull-xs-right">
+                </li>            
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" data-toggle="modal" title="A free Bootstrap theme" href="#aboutModal">About</a>
+                    <a class="nav-link page-scroll" data-toggle="modal" title="A free Bootstrap theme" href="#aboutModal">Log In</a>
                 </li>
             </ul>
         </div>
@@ -63,34 +61,35 @@
 </nav>
 <section id="one">
        <div class="container wow fadeInUp">
-        <h2>Cards</h2>
-        <p class="lead">
-            What you notice first in <a href="http://v4-alpha.getbootstrap.com/">Bootstrap 4</a> is that <code>.panel</code> and <code>.well</code> have been replaced by the <code>.card</code>. This makes a lot of sense as "cards" are one of the more well known trends in responsive design.
-            The <a href="">Bootstrap 4 Cards</a> can be singular, grouped together (as shown) or <a href="">equal height</a>. There are many different layout and content options.
-        </p>
+            <div class="row">
+                <div class="col-lg-12 text-xs-center">
+                    <h2 class="m-t-0 text-primary">Our Gnomes</h2>
+                    <hr class="primary">
+                </div>
+            </div>
         <div class="card-group">
             <!-- card -->
             <div class="card">
                 <img class="card-img-top img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample13.jpg" alt="Card image cap">
                 <div class="card-block">
-                    <h4 class="card-title">Consise</h4>
-                    <p class="card-text">Cards are a good way to display content composed of different types of objects. They’re well-suited for presenting similar objects whose size or supported actions vary, like headings and photos with captions.</p>
+                    <h4 class="card-title">Gnome One</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec scelerisque libero.</p>
                 </div>
             </div>
             <!-- card -->
             <div class="card">
                 <img class="card-img-top img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample19.jpg" alt="Card image cap">
                 <div class="card-block">
-                    <h4 class="card-title">Grouped</h4>
-                    <p class="card-text">Use card groups to render equal height cards without gutters between the cards. Use <code>.card-deck</code> for cards that aren’t attached to each another.</p>
+                    <h4 class="card-title">Gnome Two</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec scelerisque libero.</p>
                 </div>
             </div>
             <!-- card -->
             <div class="card">
                 <img class="card-img-top img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample14.jpg" alt="Card image cap">
                 <div class="card-block">
-                    <h4 class="card-title">Same Height</h4>
-                    <p class="card-text">A frequent problem occurs when you have multiple items in a row with content of varying height. Thanks to flexbox (and display:table) we now have equal height cards!</p>
+                    <h4 class="card-title">Gnome Three</h4>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec scelerisque libero.</p>
                     
                 </div>
             </div>
@@ -101,7 +100,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-xs-center">
-                <h2 class="m-t-0 text-primary">Flexbox</h2>
+                <h2 class="m-t-0 text-primary">About Us</h2>
                 <hr class="primary">
             </div>
         </div>
@@ -111,21 +110,21 @@
             <div class="col-lg-4 col-md-4 text-xs-center">
                 <div class="feature">
                     <i class="icon-lg ion-ios-grid-view-outline wow fadeIn" data-wow-delay=".1s"></i>
-                    <h6 class="text-uppercase">Easier</h6>
+                    <h6 class="text-uppercase">Christine</h6>
                     <p class="text-muted m-b-0">Flexbox provides <a href="http://v4-alpha.getbootstrap.com/getting-started/flexbox">simpler, more flexible layout</a> options like vertical centering.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 text-xs-center">
                 <div class="feature">
                     <i class="icon-lg ion-social-sass wow fadeInUp"></i>
-                    <h6 class="text-uppercase">Sass-y</h6>
+                    <h6 class="text-uppercase">Eric Steinberg</h6>
                     <p class="text-muted m-b-0">Simply set the <code>$enable-flex</code> variable to <a target="ext" href="http://codeply.com/go/YFFFWHVoRB">enable flexbox</a> in Bootstrap 4.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 text-xs-center">
                 <div class="feature">
-                    <i class="icon-lg ion-social-css3-outline wow fadeIn" data-wow-delay=".1s"></i>
-                    <h6 class="text-uppercase">It's Modern</h6>
+                    <i class="icon-lg ion-social-css3-outline wow fadeIn" data-wow-delay=".1s">i</i>
+                    <h6 class="text-uppercase">Matthew Holland</h6>
                     <p class="text-muted m-b-0">Introduced in CSS3, flexbox won't work in older browsers like <a href="http://caniuse.com/#feat=flexbox">IE9</a>.</p>
                 </div>
             </div>
