@@ -7,22 +7,79 @@
 
 module.exports = {
 
+  //Takes in the serial number and returns its status (ie. On or Off)
+  //Used by gnome devices
 	getGnomeStatus: function (request, response) {
-    	return GnomeDeviceAPI.findOne({serial:request.params.serial}).exec(function (error, result) {
-        if(error){
-          return 0;
-        }
-        else{
-    		  console.log(request.params.serial);
-          return response.send(result.status);
-        }
-    	});
-  	},
-  	changeGnome: function (request, response) {
-  		//console.log(request.body.serial);
-  		return GnomeDeviceAPI.update({serial:request.body.serial}, {status:request.body.status}).exec(function (error, result) {
-  		  return response.redirect('/GnomeAPI');
-  		});
-  	}
+
+    //console.log(request.params.serial);
+  	return GnomeDeviceAPI.findOne({serial:request.params.serial}).exec(function (error, result) {
+      
+      if(error){
+
+        //TODO error handling
+        return console.log(error);
+      }
+      else{
+
+  		  console.log(request.params.serial);
+        return response.send(result.status);
+      }
+  	});
+  },
+
+  //Takes in the serial number and changes its status (ie. On or Off)
+  //Used by gnome devices
+	changeGnome: function (request, response) {
+    
+    //console.log(request.body.serial, request.body.status);
+	  return GnomeDeviceAPI.update({serial:request.body.serial}, {status:request.body.status}).exec(function (error, result) {
+	   
+      if(error){
+
+        //TODO error handling
+        return console.log(error);
+      }
+
+      else{
+        return response.redirect('/GnomeAPI');
+      }
+    });
+	},
+
+  //Creates a new gnome as a usuable gnome, to be used by the user (Will be used by a Service)
+  //Created by user
+  createGnome: function (request, response) {
+    
+    //console.log(request.body.serial);
+    return GnomeDeviceAPI.create({serial:request.body.serial, status:false, owner:request.body.userID}).exec(function (error, result) {
+      if(error){
+
+        //TODO error handling
+        return console.log(error);
+      }
+      
+      else{
+        return response.redirect('/GnomeAPI');
+      }
+   });
+  },
+
+  //Removes a gnome as a usuable gnome, to be used by the user (Will be used by a Service)
+  //Deleted by user
+  deleteGnome: function (request, response) {
+
+    //console.log(request.body.serial);
+    return GnomeDeviceAPI.delete({where:{serial:request.body.serial}}).exec(function (error, result) {
+      if(error){
+
+        //TODO error handling
+        return console.log(error);
+      }
+      
+      else{
+        return response.redirect('/GnomeAPI');
+      }
+    });
+  }
 };
 
