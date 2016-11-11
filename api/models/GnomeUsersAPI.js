@@ -8,8 +8,9 @@
 module.exports = {
 
 	attributes: {
-	  	username:{
-		  		type:'string',
+		
+		email:{
+	  			type:'string',
 		  		size:'128',
 		  		required: true
 		},
@@ -18,8 +19,13 @@ module.exports = {
 		  		size:'128',
 		  		required: true
 		},
-		email:{
-	  			type:'string',
+		firstname:{
+		  		type:'string',
+		  		size:'128',
+		  		required: true
+		},
+		lastname:{
+		  		type:'string',
 		  		size:'128',
 		  		required: true
 		},

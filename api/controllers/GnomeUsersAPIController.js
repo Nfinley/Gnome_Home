@@ -20,13 +20,15 @@ module.exports = {
       		// OK.
       		success: function (encryptedPassword) {
       			console.log({email:request.body.email,password:encryptedPassword,
-	    			username:request.body.username,
+	    			firstname:request.body.firstname,
+	    			lastname:request.body.firstname,
 	    			zipcode:request.body.zipcode});
 
 
     			return GnomeUsersAPI.create({email:request.body.email, 
 	    			password:encryptedPassword,
-	    			username:request.body.username,
+	    			firstname:request.body.firstname,
+	    			lastname:request.body.firstname,
 	    			zipcode:request.body.zipcode})
 
 				.exec(function (error, result) {
