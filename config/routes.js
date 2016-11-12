@@ -57,7 +57,7 @@ module.exports.routes = {
   },
   '/GnomeAPI/changeGnome': {
     controller : 'GnomeDeviceAPI',
-    action: 'changeGnome' 
+    action: 'changeGnome'
    },
   '/GnomeAPI': {
     view: 'switch'
@@ -74,8 +74,16 @@ module.exports.routes = {
   '/Users/viewUser/:email':{
     controller : 'GnomeUsersAPI',
     action: 'viewUser'
-  }
+  },
 
+  // User session management
+  '/Session':{
+    view: 'login'
+  },
+  '/Session/loginUser':{
+    controller: 'SessionController',
+    action: 'loginUser'
+  }
 
   //Add device routes
 

@@ -8,7 +8,7 @@ var Passwords = require('machinepack-passwords'); //Password encryption
 
 module.exports = {
 
-	
+
 	addUser: function (request, response) {
 		//use helper function (in services folder) to validate
 		Passwords.encryptPassword({password:request.body.password}).exec({
@@ -21,14 +21,14 @@ module.exports = {
       		success: function (encryptedPassword) {
       			console.log({email:request.body.email,password:encryptedPassword,
 	    			firstname:request.body.firstname,
-	    			lastname:request.body.firstname,
+	    			lastname:request.body.lastname,
 	    			zipcode:request.body.zipcode});
 
 
-    			return GnomeUsersAPI.create({email:request.body.email, 
+    			return GnomeUsersAPI.create({email:request.body.email,
 	    			password:encryptedPassword,
 	    			firstname:request.body.firstname,
-	    			lastname:request.body.firstname,
+	    			lastname:request.body.lastname,
 	    			zipcode:request.body.zipcode})
 
 				.exec(function (error, result) {
@@ -41,13 +41,11 @@ module.exports = {
 		        	}
 		    	});
     		}
-    			    		
+
     	})
   	},
 
   	viewUser:function (request, response){
-
-
   		return GnomeUsersAPI.find().populate('gnomes')
   		.exec(function (error, result) {
     		if(error){
@@ -56,15 +54,8 @@ module.exports = {
     		else{
     			return response.json(result);
     		}
-
-
-
-
-    		
-
     	});
 
-  	}
-	
+  	},
 };
 
