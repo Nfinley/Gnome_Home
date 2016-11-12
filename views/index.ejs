@@ -276,14 +276,15 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body text-xs-center">
-                <h2 class="text-xs-center">Bootstrap 4 Theme</h2>
-                <h6 class="text-xs-center">A free, responsive template</h6>
-                <p class="text-xs-center">
-                    This is a customized, single page example template that demonstrates some of the new features to check out in Bootstrap 4. Some of the features include Google Montserrat fonts, animation using Dan Eden's animate.css and the WOW jQuery plugin to watch the scrolling.
-                </p>
-                <p class="text-xs-center"><a href="http://bootstrap4.guide">Download at Bootstrap4.guide</a></p>
-                <br>
-                <button class="btn btn-primary btn-lg" data-dismiss="modal" aria-hidden="true"> OK </button>
+                <form action="/Session/loginUser" method="POST" class="form-group">
+                    <h2> Please Sign In... </h2>
+                    <input type="text"  class="form-control" name="email" placeholder="Email Address"/>
+                    <br>
+                    <input type="password" class="form-control" name="password"     placeholder="Password"/>
+                    <br>
+                    <input type="submit" class="btn btn-md btn-primary" value="Sign In"/>
+                    <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+                </form>
             </div>
         </div>
     </div>
