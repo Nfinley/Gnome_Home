@@ -1,0 +1,28 @@
+<p>Add a user:</p></br>
+<form action="/Users/addUser/" method="POST">
+  Email: <input type="text" name="email" value=""><br>
+  Password: <input type="text" name="password" value=""><br>
+  First Name: <input type="text" name="firstname" value=""><br>
+  Last Name: <input type="text" name="lastname" value=""><br>
+  Zip Code: <input type="text" name="zipcode" value=""><br>
+  <input type="submit" value="Submit">
+</form><br>
+
+<p>Add a gnome:</p></br>
+<form action="/Gnomes/addGnome/" method="POST">
+  Serial #: <input type="text" name="serial" value=""><br>
+  UserID: <input type="text" name="userID" value=""><br>
+  <input type="submit" value="Submit">
+</form><br>
+
+<p>Turn switch ON or OFF</p></br>
+<form action="/GnomeAPI/changeGnome/" method="POST">
+  <input type="input" name="serial" value="QAZ123"><br>
+  <input type="hidden" name="status" value="true">
+  <input type="submit" value="ON">
+</form>
+<form action="/GnomeAPI/changeGnome/" method="POST">
+  <input type="input" name="serial" value="QAZ123"><br>
+  <input type="hidden" name="status" value="false">
+  <input type="submit" value="OFF">
+</form><br>

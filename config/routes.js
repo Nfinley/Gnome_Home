@@ -24,6 +24,18 @@ module.exports.routes = {
 
   /***************************************************************************
   *                                                                          *
+  *                                                                          *
+  *      !!!       ADMIN TESTING REMOVE BEFORE PRODUCTION  !!!!              *
+  *                                                                          *
+  *                                                                          *
+  ***************************************************************************/
+   '/Testing/Admin':{
+    view: 'admin'
+
+  },
+
+  /***************************************************************************
+  *                                                                          *
   * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
   * etc. depending on your default view engine) your home page.              *
   *                                                                          *
@@ -33,7 +45,10 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {
-    view: 'index'
+    view: 'index',
+    locals: {
+      title:"Gnome @ Home"
+    }
   },
 
   /***************************************************************************
@@ -46,6 +61,13 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+//Dashboard route
+  '/dashboard': {
+    view: 'dashboard',
+    locals: {
+      title:"Gnome @ Home -- Dashboard"
+    }
+  },
   //Use GET POST PUT DELETE first if using same route for different requests
   // ex 'PUT /GNOMEAPI'
 
@@ -76,6 +98,7 @@ module.exports.routes = {
     action: 'viewUser'
   },
 
+  /* Note: the following is session login testing */
   // User session management (login)
   '/Session':{
     view: 'login'
@@ -100,11 +123,12 @@ module.exports.routes = {
   '/Logout':{
     controller: 'AuthController.logout'
   }
+  /* End login session testing */
 
   //Add device routes
-
-  // '/Devices':{
-  //   controller :''
-  // }
+  '/Gnomes/addGnome':{
+    controller :'GnomeDeviceAPI',
+    action:'createGnome'
+  }
 
 };

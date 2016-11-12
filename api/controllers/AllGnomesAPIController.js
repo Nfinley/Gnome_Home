@@ -1,12 +1,15 @@
 /**
- * RougeGnomeAPIController
+ * AllGnomesAPIController
  *
  * @description :: Server-side logic for managing Rougegnomeapis
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
 module.exports = {
+
+  //Sets gnome to activated status (DRM)
 	changeGnome: function (request, response) {
+
   		//console.log(request.body.serial);
   		if({status:request.body.status}){
   			//TODO VALIDATE
