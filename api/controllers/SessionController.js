@@ -62,7 +62,7 @@ module.exports = {
 
                         console.log('session info: ' , request.session)
                         // Send the user to their dashboard since they were authenticated
-                        response.redirect('/Dashboard')
+                        response.redirect('/Dashboard/'+email)
                     },
                 })
             }

@@ -93,7 +93,11 @@ module.exports.routes = {
     controller : 'GnomeUsersAPI',
     action: 'addUser'
   },
-  '/Users/viewUser/:email':{
+  // '/Users/viewUser/:email':{
+  //   controller : 'GnomeUsersAPI',
+  //   action: 'viewUser'
+  // },
+  '/Dashboard/:email':{
     controller : 'GnomeUsersAPI',
     action: 'viewUser'
   },
