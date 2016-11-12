@@ -76,13 +76,29 @@ module.exports.routes = {
     action: 'viewUser'
   },
 
-  // User session management
+  // User session management (login)
   '/Session':{
     view: 'login'
   },
   '/Session/loginUser':{
     controller: 'SessionController',
     action: 'loginUser'
+  },
+
+  // Dashboard route (user is only sent here if authenticated first)
+  '/Dashboard':{
+    controller: 'DashboardController',
+    action: 'authenticate',
+    view: 'dashboard'
+  }
+
+  // Passport login testing
+  '/Login':{
+    controller: 'AuthController.login'
+  }
+
+  '/Logout':{
+    controller: 'AuthController.logout'
   }
 
   //Add device routes
