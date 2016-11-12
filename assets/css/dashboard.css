@@ -1,8 +1,54 @@
 /* Dashboard CSS */
+body {
+    background-color: #e9e3e6;
+}
 header .header-content {
     margin-top: 44px;
 }
 
+.image-wrapper {
+    height: 200px;
+    width: 100px;
+    margin-top: 10px;
+}
+
+.card-title {
+    margin-top: 10px;
+}
+
+
+/* Handles the colors on the page */
+h2, a.navbar-brand, .fa-plus  {
+color: #ed6a5a;
+}
+
+/* WON'T CHANGE THE LINE */
+hr.primary {
+    color: #ed6a5a;
+}
+.card-title {
+    color: #e9e3e6;
+}
+
+em {
+    color: #e9e3e6;
+}
+.card {
+    background-color: #608c9a;
+}
+
+
+
+
+a.nav-link {
+    color: #363336;
+}
+/* End color scheme */
+
+
+.card-deck .card {
+    display: inherit;
+}
 
 
 /* Button Switch */
@@ -15,7 +61,7 @@ header .header-content {
 }
 .onoffswitch-label {
     display: block; overflow: hidden; cursor: pointer;
-    border: 2px solid #999999; border-radius: 10px;
+    border: 2px solid #79828c; border-radius: 10px;
 }
 .onoffswitch-inner {
     display: block; width: 200%; margin-left: -100%;
@@ -30,12 +76,12 @@ header .header-content {
     content: "ON";
     padding-left: 10px;
     padding-right: 30px;
-    background-color: #007FFF; color: #FFFFFF;
+    background-color: #ed6a5a;; color: #FFFFFF;
 }
 .onoffswitch-inner:after {
     content: "OFF";
     padding-right: 10px;
-    background-color: #EEEEEE; color: #007FFF;
+    background-color: #EEEEEE; color: #ed6a5a;
     text-align: right;
 }
 .onoffswitch-switch {
@@ -43,7 +89,7 @@ header .header-content {
     background: #FFFFFF;
     position: absolute; top: 0; bottom: 0;
     right: 55px;
-    border: 2px solid #999999; border-radius: 10px;
+    border: 2px solid #79828c; border-radius: 10px;
     transition: all 0.3s ease-in 0s;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
@@ -55,4 +101,7 @@ header .header-content {
 /* END OF BUTTON SWITCH */
 
 /* For the CLOUDS animated images */
+
+/* Media Query UPDATES */
+
 

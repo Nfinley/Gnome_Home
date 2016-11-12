@@ -58,6 +58,10 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+//Dashboard route
+  '/dashboard': {
+    view: 'dashboard'
+  },
   //Use GET POST PUT DELETE first if using same route for different requests
   // ex 'PUT /GNOMEAPI'
 
