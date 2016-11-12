@@ -15,7 +15,7 @@ module.exports = {
             // response.locals.firstName = request.session.firstName;
             // response.locals.email = request.session.email;
             // Continue to 'view' property in route (the dashboard)
-            //return next()
+            return next()
         } else {
             console.log('User is not authenticated!')
             return response.forbidden()
