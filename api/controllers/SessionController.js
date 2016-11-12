@@ -10,8 +10,8 @@ var passport = require('passport')
 
 module.exports = {
     loginUser: function(request, response) {
-        let email = request.body.email;
-        let password = request.body.password;
+        var email = request.body.email;
+        var password = request.body.password;
         // console.log(email)
         // console.log(password)
 
@@ -26,11 +26,11 @@ module.exports = {
                     return response.send('Dupe user error!')
                 }
                 // Get user information from result. Will be used later for session info
-                const encryptedPassword = result[0].password;
-                const userId = result[0].id;
-                const email = result[0].email;
-                const firstName = result[0].firstname;
-                const lastName = result[0].lastname;
+                var encryptedPassword = result[0].password;
+                var userId = result[0].id;
+                var email = result[0].email;
+                var firstName = result[0].firstname;
+                var lastName = result[0].lastname;
                 console.log('encryptedPass: ' + encryptedPassword + ' password: ' + password + ' userId: ' + userId + ' email: ' + email + ' firstName: ' + firstName + ' lastName: ' + lastName)
                 // Verify password input against encrypted password
                 Passwords.checkPassword({

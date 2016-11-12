@@ -1,6 +1,4 @@
-'use_strict';
-
-const passport = require('passport')
+var passport = require('passport')
 LocalStrategy = require('passport-local').Strategy,
 Passwords = require('machinepack-passwords');
 
