@@ -50,8 +50,6 @@
                 </div>
             </div>
             <div class="card-deck-wrapper">
-
-
                 <div class="card-deck">
                     <!--card 1-->
                     <div class="row">
@@ -173,11 +171,11 @@
 
 
 
-<!--<footer id="footer">-->
-<!--<div class="container">-->
-<!--<span class="pull-left text-muted small"> ©2016 Gnome@Home</span>-->
-<!--</div>-->
-<!--</footer>-->
+<footer id="footer">
+<div class="container">
+<span class="pull-left text-muted small"> ©2016 Gnome@Home</span>
+</div>
+</footer>
 
 
 <!--======== MODALS ========= -->
@@ -222,6 +220,12 @@
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-body text-xs-center">
+                <h2 class="text-xs-center">Add a gnome:</h2></br>
+                <form action="/Gnomes/addGnome/" method="POST">
+                    Serial #: <input type="text" name="serial" value=""><br>
+                    UserID: <input type="text" name="userID" value=""><br>
+                    <input type="submit" value="Submit">
+                </form><br>
                 <h2 class="text-xs-center">Nice Job!</h2>
                 <p class="text-xs-center">You clicked the button, but it doesn't actually go anywhere because this is
                     only a demo.</p>

@@ -24,7 +24,7 @@ color: #ed6a5a;
 
 /* WON'T CHANGE THE LINE */
 hr.primary {
-    color: #ed6a5a;
+    border-color: #ed6a5a;
 }
 .card-title {
     color: #e9e3e6;

@@ -8,20 +8,19 @@
 module.exports = {
 
   //Sets gnome to activated status (DRM)
-	changeGnome: function (request, response) {
-
-  		//console.log(request.body.serial);
-  		if({status:request.body.status}){
-  			//TODO VALIDATE
-  			return GnomeAPI.update({serial:request.body.serial}, {status:request.body.status}).exec(function (error, result) {
-  		  		return response.redirect('/GnomeAPI');
-  			});
-  		}
-  		else{
-  			//TODO error function
-  			return response.redirect('/GnomeAPI');
-  		}
-  	}
+  changeGnome: function (request, response) {
+      //console.log(request.body.serial);
+    if (!request.body.status) {
+            //TODO error function
+      return response.redirect('/GnomeAPI');
+    } else {
+            //TODO VALIDATE
+      return AllGnomesAPI.update({serial: request.body.serial}, {status: request.body.status}).exec(function () {
+        return response.redirect('/GnomeAPI');
+      });
+    }
+  }
 	
 };
+
 

@@ -13,7 +13,7 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        // "react"
     ],
     "rules": {
         "indent": [
@@ -31,6 +31,7 @@ module.exports = {
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "no-undef": 1
     }
 };
