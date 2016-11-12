@@ -53,6 +53,7 @@ module.exports = {
 
     //View all information about the user (from submitted email) including all devices
   viewUser: function (request, response) {
+    console.log("hit");
     return GnomeUsersAPI.find({where: {email: request.params.email}}).populate('gnomes')
             .exec(function (error, result) {
 
