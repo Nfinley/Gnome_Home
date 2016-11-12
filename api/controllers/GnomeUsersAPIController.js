@@ -57,7 +57,8 @@ module.exports = {
     			return console.log(error);
     		}
     		else{
-          return response.view('dashboard', JSON.parse(result));
+          console.log(result);
+          return response.view('dashboard', {gnomes:result});
     		}
     	});
   	}
