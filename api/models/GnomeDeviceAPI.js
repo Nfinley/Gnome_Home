@@ -15,11 +15,18 @@ module.exports = {
   		required: true
   	},
 
+    //Nickname of device
+    nickname:{
+      type:'string',
+      size:'128',
+      required: true
+    },
+
     //Is device on or off
-  	status:{
-  		type:'boolean',
-  		required: true
-  	},
+    status:{
+      type:'boolean',
+      required: true
+    },
 
     //Owner (user) of device
     owner:{

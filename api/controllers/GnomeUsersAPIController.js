@@ -57,6 +57,7 @@ module.exports = {
     			return console.log(error);
     		}
     		else{
+          //return response.view('homepage', {title:'Eric'});
     			return response.json(result);
     		}
     	});
