@@ -63,7 +63,10 @@ module.exports.routes = {
 
 //Dashboard route
   '/dashboard': {
-    view: 'dashboard'
+    view: 'dashboard',
+    locals: {
+      title:"Gnome @ Home -- Dashboard"
+    }
   },
   //Use GET POST PUT DELETE first if using same route for different requests
   // ex 'PUT /GNOMEAPI'
