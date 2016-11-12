@@ -113,16 +113,18 @@ module.exports.routes = {
     controller: 'DashboardController',
     action: 'authenticate',
     view: 'dashboard'
-  }
+  },
 
   // Passport login testing
   '/Login':{
-    controller: 'AuthController.login'
-  }
+    controller: 'AuthController',
+    action: 'login'
+  },
 
   '/Logout':{
-    controller: 'AuthController.logout'
-  }
+    controller: 'AuthController',
+    action: 'logout'
+  },
   /* End login session testing */
 
   //Add device routes

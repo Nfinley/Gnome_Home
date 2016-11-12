@@ -23,7 +23,7 @@ module.exports = {
                 })
             })
         })(request, response)
-    }
+    },
 
     logout: function(request, response) {
         request.logout()

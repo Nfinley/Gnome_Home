@@ -68,21 +68,20 @@ module.exports = {
             }
         })
     },
-
-    facebook: function(request, response) {
-        passport.authenticate('facebook', {
-            failureRedirect: '/index', scope:['email'] }, function(err, user) {
-                request.logIn(user, function(err) {
-                    if(err) {
-                        console.log(err)
-                        response.view('500')
-                        return;
-                    }
-                    response.redirect('/Dashboard')
-                    return;
-                })
-            }
-        })
-    }
+    // facebook: function(request, response) {
+    //     passport.authenticate('facebook', {
+    //         failureRedirect: '/index', scope:['email'] }, function(err, user) {
+    //             request.logIn(user, function(err) {
+    //                 if(err) {
+    //                     console.log(err)
+    //                     response.view('500')
+    //                     return;
+    //                 }
+    //                 response.redirect('/Dashboard')
+    //                 return;
+    //             })
+    //         })
+    //     })
+    // }
 };
 
