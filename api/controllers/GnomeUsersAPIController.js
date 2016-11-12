@@ -20,15 +20,15 @@ module.exports = {
         		return response.serverError(err);
       		},
       		success: function (encryptedPassword) {
-      		// 	console.log({email:request.body.email,password:encryptedPassword,
-	    			// firstname:request.body.firstname,
-	    			// lastname:request.body.firstname,
-	    			// zipcode:request.body.zipcode});
+      			console.log({email:request.body.email,password:encryptedPassword,
+	    			firstname:request.body.firstname,
+	    			lastname:request.body.lastname,
+	    			zipcode:request.body.zipcode});
 
-    			return GnomeUsersAPI.create({email:request.body.email, 
+    			return GnomeUsersAPI.create({email:request.body.email,
 	    			password:encryptedPassword,
 	    			firstname:request.body.firstname,
-	    			lastname:request.body.firstname,
+	    			lastname:request.body.lastname,
 	    			zipcode:request.body.zipcode})
 
 				.exec(function (error, result) {
@@ -43,7 +43,7 @@ module.exports = {
 		        	}
 		    	});
     		}
-    			    		
+
     	})
   	},
 
@@ -62,4 +62,3 @@ module.exports = {
     	});
   	}
 };
-

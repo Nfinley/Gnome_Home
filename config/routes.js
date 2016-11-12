@@ -79,7 +79,7 @@ module.exports.routes = {
   },
   '/GnomeAPI/changeGnome': {
     controller : 'GnomeDeviceAPI',
-    action: 'changeGnome' 
+    action: 'changeGnome'
    },
   '/GnomeAPI': {
     view: 'switch'
@@ -98,7 +98,35 @@ module.exports.routes = {
     action: 'viewUser'
   },
 
- 
+  /* Note: the following is session login testing */
+  // User session management (login)
+  '/Session':{
+    view: 'login'
+  },
+  '/Session/loginUser':{
+    controller: 'SessionController',
+    action: 'loginUser'
+  },
+
+  // Dashboard route (user is only sent here if authenticated first)
+  '/Dashboard':{
+    controller: 'DashboardController',
+    action: 'authenticate',
+    view: 'dashboard'
+  },
+
+  // Passport login testing
+  '/Login':{
+    controller: 'AuthController',
+    action: 'login'
+  },
+
+  '/Logout':{
+    controller: 'AuthController',
+    action: 'logout'
+  },
+  /* End login session testing */
+
   //Add device routes
   '/Gnomes/addGnome':{
     controller :'GnomeDeviceAPI',
