@@ -32,6 +32,7 @@ module.exports = {
             "error",
             "always"
         ],
-        "no-undef": 1
+        "no-undef": 1,
+        "no-console": 1
     }
 };
