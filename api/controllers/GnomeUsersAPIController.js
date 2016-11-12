@@ -58,7 +58,6 @@ module.exports = {
     		}
     		else{
           return response.view('dashboard', JSON.parse(result));
-    			return response.;
     		}
     	});
   	}
