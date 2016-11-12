@@ -7,15 +7,15 @@ body {
 }
 
 body {
-    font-family: 'Montserrat','Helvetica Neue',Arial,sans-serif;
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
     color: #001A33;
     webkit-tap-highlight-color: #222;
-    top:0;
+    top: 0;
 }
 
 /* workaround modal-open padding issue */
 body.modal-open {
-    padding-right:0 !important;
+    padding-right: 0 !important;
 }
 
 hr {
@@ -32,12 +32,12 @@ hr.light {
 }
 
 hr.primary {
-    border-color: #007FFF;
+    border-color: #ed6a5a;
     opacity: 1;
 }
 
 a {
-    color: #007FFF;
+    color: #ed6a5a;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -53,11 +53,11 @@ p {
     font-size: 17px;
     line-height: 1.7;
     margin-bottom: 20px;
-    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 .text-normal {
-    font-family:'Helvetica Neue',Arial,sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 .wide-space {
@@ -70,7 +70,7 @@ p {
 }
 
 .bg-primary {
-    background-color: #007FFF;
+    background-color: #ed6a5a;
 }
 
 .bg-alt {
@@ -78,7 +78,7 @@ p {
 }
 
 .text-faded {
-    color: rgba(245,245,245,0.7);
+    color: rgba(245, 245, 245, 0.7);
 }
 
 .text-dark {
@@ -89,13 +89,13 @@ p {
     color: #fff;
 }
 
-.text-light:hover,.text-light:focus {
+.text-light:hover, .text-light:focus {
     color: #eee;
-    text-decoration:none;
+    text-decoration: none;
 }
 
 .text-primary {
-    color: #007FFF;
+    color: #ed6a5a !important;
 }
 
 section {
@@ -113,11 +113,11 @@ footer {
 }
 
 footer h4, footer h6 {
-    color:#fff;
+    color: #fff;
 }
 
 .navbar-default {
-    border-color: rgba(35,35,35,.05);
+    border-color: rgba(35, 35, 35, .05);
     background-color: #fff;
     -webkit-transition: all .4s;
     -moz-transition: all .4s;
@@ -132,49 +132,52 @@ footer h4, footer h6 {
 
 .navbar-brand:hover,
 .navbar-brand:focus {
-    color: #007FFF;
+    color: #ed6a5a;
 }
 
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
     background-color: #001A33;
 }
+
 .navbar-default .navbar-toggle, .navbar-default .navbar-collapse {
     border-color: transparent;
 }
 
-.navbar-default .nav > li>a,
-.navbar-default .nav>li>a:focus {
+.navbar-default .nav > li > a,
+.navbar-default .nav > li > a:focus {
     font-size: 12px;
     color: #001A33;
     text-transform: uppercase;
 }
 
-.navbar-default .nav>li>a:hover,
-.navbar-default .nav>li>a:focus:hover {
-    color: #007FFF;
+.navbar-default .nav > li > a:hover,
+.navbar-default .nav > li > a:focus:hover {
+    color: #ed6a5a;
 }
 
 .navbar-default .nav .nav-link.active,
 .navbar-default .nav .nav-link.active:focus {
-    color: #007FFF !important;
+    color: #ed6a5a !important;
     background-color: transparent;
 }
 
 /* responsive nav */
-@media(max-width:48em) {
-    .navbar-default .navbar-nav>.nav-item {
+@media (max-width: 48em) {
+    .navbar-default .navbar-nav > .nav-item {
         float: none;
         margin-left: .1rem;
     }
+
     .navbar-default .navbar-nav {
-        float:none !important;
+        float: none !important;
     }
+
     .navbar-default .navbar-brand img {
-        display:inline;
+        display: inline;
     }
 }
 
-@media(min-width:48em) {
+@media (min-width: 48em) {
     .navbar-default {
         border-color: transparent;
         background-color: #fff;
@@ -189,24 +192,24 @@ footer h4, footer h6 {
     .navbar-default .navbar-brand:focus {
         color: #001A33;
     }
-    
-    .navbar-default .nav > li>a,
-    .navbar-default .nav>li>a:focus {
+
+    .navbar-default .nav > li > a,
+    .navbar-default .nav > li > a:focus {
         color: #001A33;
         padding-left: 5px;
         padding-top: 21px;
         letter-spacing: 1.1px;
     }
 
-    .navbar-default .nav > li>a:hover,
-    .navbar-default .nav>li>a:focus:hover {
+    .navbar-default .nav > li > a:hover,
+    .navbar-default .nav > li > a:focus:hover {
         color: #001A33;
     }
 
     #topNav {
-      background-color:#fff;
+        background-color: #fff;
     }
-    
+
 }
 
 header {
@@ -238,19 +241,19 @@ header .header-content .inner p {
     color: #222;
 }
 
-#splashPage{
-    min-height:480px; 
-    max-height:720px;
+#splashPage {
+    min-height: 480px;
+    max-height: 720px;
     position: relative;
     background-image: url("http://placehold.it/1280x720");
     background-size: cover;
 }
 
-@media(min-width:34em) {
+@media (min-width: 34em) {
     .icon-lg {
         font-size: 80px;
     }
-    
+
     header {
         min-height: 100%;
     }
@@ -280,7 +283,7 @@ header .header-content .inner p {
         max-width: 80%;
         font-size: 18px;
     }
-    
+
     section {
         min-height: 600px;
         padding: 100px 0;
@@ -289,7 +292,7 @@ header .header-content .inner p {
 }
 
 .list-group-item, .card-footer {
-    background-color:transparent;
+    background-color: transparent;
 }
 
 textarea {
@@ -302,11 +305,11 @@ textarea {
 
 .btn.btn-primary {
     background-color: transparent;
-    border:1px solid #007FFF;
+    border: 1px solid #ed6a5a;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
-    color:#007FFF;
+    color: #ed6a5a;
 }
 
 .btn.btn-primary:hover {
@@ -314,11 +317,12 @@ textarea {
 }
 
 .btn-primary-outline {
-    border-color:#007FFF;
-    color:#007FFF;
+    border-color: #ed6a5a;
+    color: #ed6a5a;
 }
+
 .btn-primary-outline:hover {
-    background-color:#007FFF;
+    background-color: #ed6a5a;
 }
 
 .btn-xl {
@@ -348,6 +352,15 @@ img::-moz-selection {
     background: 0 0;
 }
 
-#christine,#saidi,#nigel,#matt,#eric {
+#christine, #saidi, #nigel, #matt, #eric {
     margin: 1em 0;
+}
+
+#splash {
+    background-color: #e9e3e6;
+    opacity: .85;
+    width: 50%;
+    align-content: center;
+    margin-left: 25%;
+
 }
