@@ -130,37 +130,65 @@
 </section>
 
 <!-- Register-->
+
 <section id="register" class="bg-alt">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-xs-center">
                 <h2 class="margin-top-0 wow fadeIn text-primary">Register</h2>
                 <hr class="primary">
-                <p>Bring a Gnome home.</p>
+                <p>You have a Gnome, let's bring him Gnome home.</p>
             </div>
             <div class="col-lg-10 offset-lg-1 text-xs-center">
-                <form class="contact-form row">
-                    <div class="col-md-4">
-                        <label></label>
-                        <input type="text" class="form-control" placeholder="Name">
+                <form action="/Users/addUser/" method="POST">
+                    <div class="form-group">
+                        <!--EMAIL ADDRESS-->
+                        <div class="col-md-6">
+                            <label for="emailAddress"></label>
+                            <input  name="email" value="" type="email" class="form-control pull-left" id="emailAddress" aria-describedby="emailHelp" placeholder="Enter email">
+                            <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                        <label></label>
-                        <input type="text" class="form-control" placeholder="Email">
+
+                    <!--PASSWORD-->
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <label for="userPassword"></label>
+                            <input name="password" value="" type="password" class="form-control" id="userPassword" placeholder="Password">
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                        <label></label>
-                        <input type="text" class="form-control" placeholder="Phone">
+
+                    <!--First NAME-->
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label for="firstName"></label>
+                            <input name="firstname" value="" type="text" class="form-control" id="firstName" placeholder="Enter First Name">
+                        </div>
                     </div>
-                    <div class="col-md-12">
-                        <label></label>
-                        <textarea class="form-control" rows="9" placeholder="Your message here.."></textarea>
+
+                    <!--LAST NAME-->
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label for="lastName"></label>
+                            <input name="lastname" value="" type="text" class="form-control" id="lastName" placeholder="Enter Last Name">
+                        </div>
                     </div>
-                    <div class="col-md-4 offset-md-4">
+
+                    <!--ZIP CODE-->
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label for="enterZip"></label>
+                            <input name="zipcode" value="" type="text" class="form-control" id="enterZip" placeholder="Enter Zip Code">
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="col-md-4 offset-md-8">
                         <label></label>
-                        <button type="button" data-toggle="modal" data-target="#alertModal" class="btn btn-primary btn-block btn-lg">Send <i class="ion-android-arrow-forward"></i></button>
+                        <input type="submit" class="btn btn-primary btn-block btn-lg" aria-hidden="true" value="Submit"></input>
                     </div>
                 </form>
+
             </div>
         </div>
     </div>
@@ -302,6 +330,7 @@
 
 
  <!--======== SIGN IN MODAL ==========-->
+
 <div id="signinModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
