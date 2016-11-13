@@ -3,4 +3,4 @@ node_modules/
 # config/
 .tmp/
 .idea
-config/connections.js
+# config/connections.js
