@@ -50,7 +50,8 @@
                 <br>
                 <h5 class="wow fadeIn text-normal wow fadeIn">You always have a Gnome at home no matter where you roam!</h5>
                 <br>
-                <a href="#one" class="btn btn-primary-outline btn-xl page-scroll wow fadeInUp m-t-3">Register</a>
+                <a data-toggle="modal" title="Register Modal" href="#registerModal" class="btn btn-primary-outline btn-xl page-scroll wow fadeInUp m-t-3">Register</a>
+
                 <br>
                 <br>
             </div>
@@ -82,7 +83,7 @@
                                     <a class="nav-link page-scroll" href="#four">More</a>
                                 </li>  -->
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" data-toggle="modal" title="A free Bootstrap theme" href="#aboutModal">Log In</a>
+                    <a class="nav-link page-scroll" data-toggle="modal" title="Sign In Modal" href="#signinModal">Log In</a>
                 </li>
             </ul>
         </div>
@@ -259,20 +260,13 @@
         <span class="pull-right text-muted small"><a href="http://bootstrap4.guide">Made by Themes.guide</a> ©2015-2016 Company</span>
     </div>
 </footer>
-<div id="galleryModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body text-xs-center">
-                <img src="//placehold.it/1200x700/222?text=..." id="galleryImage" class="center-block img-fluid">
-                <p>
-                    <br>
-                    <button class="btn btn-primary btn-lg" data-dismiss="modal" aria-hidden="true">Close <i class="ion-android-close"></i></button>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="aboutModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+
+
+<!--====== MODALS ==========-->
+
+
+ <!--======== SIGN IN MODAL ==========-->
+<div id="signinModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body text-xs-center">
@@ -289,6 +283,63 @@
         </div>
     </div>
 </div>
+
+
+<!--====== REGISTER MODAL-->
+<div id="registerModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body text-xs-center">
+                <h2 class="text-xs-center"> Sign Up!</h2></br>
+                <form action="/Users/addUser/" method="POST">
+                    <div class="form-group">
+                        <!--EMAIL ADDRESS-->
+                        <label for="emailAddress">Email:</label>
+                        <input  name="email" value="" type="email" class="form-control pull-left" id="emailAddress" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+
+                    <!--PASSWORD-->
+                    <div class="form-group">
+                        <label for="userPassword">Password:</label>
+                        <input name="password" value="" type="password" class="form-control" id="userPassword" placeholder="Password">
+                    </div>
+
+                    <!--First NAME-->
+                    <div class="form-group">
+                        <label for="firstName">First Name:</label>
+                        <input name="firstname" value="" type="text" class="form-control" id="firstName" placeholder="Enter First Name">
+                    </div>
+
+                    <!--LAST NAME-->
+                    <div class="form-group">
+                        <label for="lastName">Last Name:</label>
+                        <input name="lastname" value="" type="text" class="form-control" id="lastName" placeholder="Enter Last Name">
+                    </div>
+
+                    <!--ZIP CODE-->
+                    <div class="form-group">
+                        <label for="enterZip">Zip Code:</label>
+                        <input name="zipcode" value="" type="text" class="form-control" id="enterZip" placeholder="Enter Zip Code">
+                    </div>
+                    <br>
+                    <input type="submit" class="btn btn-primary btn-lg" aria-hidden="true" value="Submit"></input>
+                    <!--Email: <input type="text" name="email" value=""><br>-->
+                    <!--Password: <input type="text" name="password" value=""><br>-->
+                    <!--First Name: <input type="text" name="firstname" value=""><br>-->
+                    <!--Last Name: <input type="text" name="lastname" value=""><br>-->
+                    <!--Zip Code: <input type="text" name="zipcode" value=""><br>-->
+                    <!--<input type="submit" value="Submit">-->
+                </form>
+
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <div id="alertModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
