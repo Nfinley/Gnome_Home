@@ -50,16 +50,16 @@ module.exports.connections = {
     */
     /* Below is the new heroku info: */
     host: 'us-cdbr-iron-east-04.cleardb.net',
-    user: 'b37ba81f05baf8',
-    password: '305ed91d',
-    database: 'heroku_0e2ec19a9328d42'
+    user: 'b2a58c94b265fb',
+    password: '03ce009e',
+    database: 'heroku_74959e390831132'
     // database: heroku_0e2ec19a9328d42
-    /* Note: everything after the @ symbol until / is the db host: us-cdbr-iron-east-04.cleardb.net
-     * Everything after the / until ? is the db name: heroku_0e2ec19a9328d42
-     * Everything after the // until : is the db username: b37ba81f05baf8
-     * The string between : and @ is the db password: 305ed91d
+    /* Note: everything after the @ symbol until / is the db host
+     * Everything after the / until ? is the db name
+     * Everything after the // until : is the db username
+     * The string between : and @ is the db password
      */
-    // CLEARDB_DATABASE_URL: mysql://b37ba81f05baf8:305ed91d@us-cdbr-iron-east-04.cleardb.net/heroku_0e2ec19a9328d42?reconnect=true
+    // CLEARDB_DATABASE_URL: mysql://b2a58c94b265fb:03ce009e@us-cdbr-iron-east-04.cleardb.net/heroku_74959e390831132?reconnect=true
   },
 
   /***************************************************************************
