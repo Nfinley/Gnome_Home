@@ -1,7 +1,5 @@
 /* Dashboard CSS */
-body {
-    background-color: #e9e3e6;
-}
+
 header .header-content {
     margin-top: 44px;
 }
@@ -22,7 +20,7 @@ h2, a.navbar-brand, .fa-plus  {
 color: #ed6a5a;
 }
 
-/* WON'T CHANGE THE LINE */
+
 hr.primary {
     border-color: #ed6a5a;
 }
@@ -38,8 +36,6 @@ em {
 }
 
 
-
-
 a.nav-link {
     color: #363336;
 }
@@ -48,6 +44,10 @@ a.nav-link {
 
 .card-deck .card {
     display: inherit;
+}
+
+.col-md-4, .col-xs-12, .col-sm-6 {
+    margin-bottom: 20px;
 }
 
 
