@@ -54,7 +54,7 @@
 
                 <div class="card-deck">
                     <div class="row">
- <% for(var i = 0; i < gnomes[0].gnomes.length; i++) { %>
+                        <% for(var i = 0; i < gnomes[0].gnomes.length; i++) { %>
 
                         <div class="col-xs-12 col-sm-6 col-md-4">
                             <div class="card">
@@ -85,32 +85,24 @@
 
                         <% } %>
 
-
-                    
                         <!--card 3-->
                         <div class="col-xs-12 col-sm-6 col-md-4">
 
                             <div class="card">
                                 <h4 class="card-title "></h4>
-                                <!--<img class="card-img-top image-wrapper" src="../assets/images/gnome-bg-small.png"-->
-                                <!--alt="Card image cap">-->
+
 
                                 <div class="card-block">
                                     <!--TODO: CARDS AUTO RESIZE AND WE NEED TO FIX THIS-->
-                                    <p class="card-text"><a class="nav-link page-scroll" data-toggle="modal" title="Edit Settings" href="#settingsModal"><i class="fa fa-plus fa-5x" aria-hidden="true"></i></a></p>
-                                    <p class="card-text"><em>Add Gnome</em></i></p>
+                                    <p class="card-text"><a class="nav-link page-scroll" data-toggle="modal"
+                                                            title="Add Gnome" href="#addGnomeModal"><i
+                                                    class="fa fa-plus fa-5x" aria-hidden="true"></i></a></p>
+                                    <p class="card-text"><em><a class="nav-link page-scroll" data-toggle="modal"
+                                                                title="Add Gnome" href="#addGnomeModal">Add Gnome</a></em></p>
 
                                     <!--on/off switch html-->
                                     <div class="text-center btn">
-                                        <!--<div class="onoffswitch">-->
 
-                                        <!--<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox"-->
-                                        <!--id="myonoffswitch1">-->
-                                        <!--<label class="onoffswitch-label" for="myonoffswitch1">-->
-                                        <!--<span class="onoffswitch-inner"></span>-->
-                                        <!--<span class="onoffswitch-switch"></span>-->
-                                        <!--</label>-->
-                                        <!--</div>-->
                                     </div>
 
                                 </div>
@@ -224,24 +216,39 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body text-xs-center">
-                <h2 class="text-xs-center">Add a gnome:</h2></br>
+                <h2 class="text-xs-center">Add Your Gnome</h2></br>
                 <form action="/Gnomes/addGnome/" method="POST">
-                    Serial #: <input type="text" name="serial" value=""><br>
-                    UserID: <input type="text" name="userID" value=""><br>
-                    Gnome Nickname: <input type="text" name="nickName" value=""><br>
-                    <!--TODO: DOES THIS NEED TO BE AN INPUT INSTEAD OF A BUTTON?-->
-                    <!--<input type="submit" value="Submit">-->
+                    <div class="form-group row">
+                        <label for="Gnome Nickname" class="col-xs-4 col-form-label">Gnome Nickname:</label>
+                        <div class="col-xs-8">
+                            <input class="form-control" type="text" name="nickname" value="" id="Gnome Nickname">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="Serial Number" class="col-xs-4 col-form-label">Serial #:</label>
+                        <div class="col-xs-8">
+                            <input type="hidden" name="status" value="false">
+                            <input class="form-control" type="text" name="serial" value="" id="Serial Number">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="User ID" class="col-xs-4 col-form-label">User ID:</label>
+                        <div class="col-xs-8">
+                            <input class="form-control" type="text" name="userID" value="" id="User ID">
+                        </div>
+                    </div>
+
+                    <!--Serial #: <input type="text" name="serial" value=""><br>-->
+                    <!--UserID: <input type="text" name="userID" value=""><br>-->
+                    <!--Gnome Nickname: <input type="text" name="nickName" value="" data-dismiss="modal"><br>-->
+                    <input type="submit" value="ADD!" class="btn btn-primary btn-lg pull-right"
+                           aria-hidden="true"></input>
+
                 </form>
-                <br>
-                <button type="submit" value="Submit" class="btn btn-primary btn-lg" data-dismiss="modal" aria-hidden="true"> ADD! </button>
             </div>
         </div>
     </div>
 </div>
-
-
-
-
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
