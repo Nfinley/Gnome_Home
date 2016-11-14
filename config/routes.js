@@ -93,17 +93,15 @@ module.exports.routes = {
     controller : 'GnomeUsersAPI',
     action: 'addUser'
   },
-  // '/Users/viewUser/:email':{
-  //   controller : 'GnomeUsersAPI',
-  //   action: 'viewUser'
-  // },
+
+
   '/Dashboard/:email':{
     controller : 'GnomeUsersAPI',
     action: 'viewUser'
   },
 
   /* Note: the following is session login testing */
-  // User session management (login)
+  // User session management (login/logout)
   '/Session':{
     view: 'login'
   },
@@ -111,23 +109,16 @@ module.exports.routes = {
     controller: 'SessionController',
     action: 'loginUser'
   },
+  '/logoutUser': {
+    controller: 'SessionController',
+    action: 'logoutUser'
+  },
 
   // Dashboard route (user is only sent here if authenticated first)
   '/Dashboard':{
     controller: 'DashboardController',
     action: 'authenticate',
     view: 'dashboard'
-  },
-
-  // Passport login testing
-  '/Login':{
-    controller: 'AuthController',
-    action: 'login'
-  },
-
-  '/Logout':{
-    controller: 'AuthController',
-    action: 'logout'
   },
   /* End login session testing */
 
@@ -138,5 +129,5 @@ module.exports.routes = {
     // controller :'AllGnomesAPI',
     // action:'addGnome'
   },
-  
+
 };

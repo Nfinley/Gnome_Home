@@ -1,5 +1,33 @@
 /* Dashboard CSS */
 
+body, header {
+    background-image: url('../images/seigaiha.png');
+}
+
+/* Side slider */
+#slider {
+    background-color: #BDBDBD;
+    z-index: 9999999;
+    /* Match the height of the nav bar */
+    margin-top: 70px;
+}
+#slider h3 {
+    background-color: #2E2E2E;
+    color: #fff;
+    font-size: 1.2em;
+    padding: 15px;
+    margin: 0;
+    font-weight: 300;
+}
+#slider a {
+    border-bottom: 1px solid #D8D8D8;
+    padding: 1em;
+    display: block;
+    font-size: 1.4em;
+    font-weight: 300;
+    text-decoration: none;
+}
+
 header .header-content {
     margin-top: 44px;
 }

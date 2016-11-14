@@ -6,7 +6,7 @@
  */
 
 var Passwords = require('machinepack-passwords')
-var passport = require('passport')
+// var passport = require('passport')
 
 module.exports = {
     loginUser: function(request, response) {
@@ -68,6 +68,12 @@ module.exports = {
             }
         })
     },
+
+    logoutUser: function(request, response) {
+        // Set user session to false
+        request.session.authenticated = false;
+        response.redirect('/index')
+    }
     // facebook: function(request, response) {
     //     passport.authenticate('facebook', {
     //         failureRedirect: '/index', scope:['email'] }, function(err, user) {
@@ -84,4 +90,3 @@ module.exports = {
     //     })
     // }
 };
-

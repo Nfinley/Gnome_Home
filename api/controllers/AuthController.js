@@ -4,9 +4,10 @@
  * @description :: Server-side logic for managing Auths
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
-var passport = require('passport')
+// var passport = require('passport')
 
 module.exports = {
+    /*
     login: function(request, response) {
         passport.authenticate('local', function(err, user, info) {
             if(err || !user) {
@@ -23,10 +24,10 @@ module.exports = {
                 })
             })
         })(request, response)
-    },
+    },*/
 
     logout: function(request, response) {
-        request.logout()
+        request.session.authenticated =
         response.redirect('/index')
     }
 };
