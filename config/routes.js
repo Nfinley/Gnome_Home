@@ -47,7 +47,7 @@ module.exports.routes = {
   '/': {
     view: 'index',
     locals: {
-      title:"Gnome @ Home"
+      title:'Gnome @ Home'
     }
   },
 
@@ -65,7 +65,7 @@ module.exports.routes = {
   '/dashboard': {
     view: 'dashboard',
     locals: {
-      title:"Gnome @ Home -- Dashboard"
+      title:'Gnome @ Home -- Dashboard'
     }
   },
   //Use GET POST PUT DELETE first if using same route for different requests
@@ -135,6 +135,8 @@ module.exports.routes = {
   '/Gnomes/addGnome':{
     controller :'GnomeDeviceAPI',
     action:'createGnome'
-  }
-
+    // controller :'AllGnomesAPI',
+    // action:'addGnome'
+  },
+  
 };
