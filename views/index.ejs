@@ -12,11 +12,36 @@
 <!-- Ionicons CSS -->
 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
-<!-- Customer Stylesheet -->
+<!-- Custom Stylesheet -->
 <link rel="stylesheet" href="css/styles.css">
+
+<!-- Spinner CSS -->
+<link rel="stylesheet" href="css/spinner.css">
 
 </head>
 <body class="bg-faded">
+
+<!-- Spinner container -->
+<div class="spinner-div"></div>
+
+<!--======== SIGN IN MODAL ==========-->
+<div id="signinModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body text-xs-center">
+                <form action="/Session/loginUser" method="POST" class="form-group">
+                    <h2> Please Sign In... </h2>
+                    <input type="text"  class="form-control" name="email" placeholder="Email Address"/>
+                    <br>
+                    <input type="password" class="form-control" name="password"     placeholder="Password"/>
+                    <br>
+                    <input type="submit" class="btn btn-md btn-primary" value="Sign In"/>
+                    <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Splash Page -->
 
@@ -78,9 +103,6 @@
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#last">Contact Us</a>
                 </li>
-                <!--                 <li class="nav-item">
-                                    <a class="nav-link page-scroll" href="#four">More</a>
-                                </li>  -->
                 <li class="nav-item">
                     <a class="nav-link page-scroll" data-toggle="modal" title="Sign In Modal" href="#signinModal">Log In</a>
                 </li>
@@ -140,12 +162,12 @@
                 <p>You have a Gnome, let's bring him Gnome home.</p>
             </div>
             <div class="col-lg-10 offset-lg-1 text-xs-center">
-                <form action="/Users/addUser/" method="POST">
+                <form id="reg-form" action="/Users/addUser/" method="POST">
                     <div class="form-group">
                         <!--EMAIL ADDRESS-->
                         <div class="col-md-6">
                             <label for="emailAddress"></label>
-                            <input  name="email" value="" type="email" class="form-control pull-left" id="emailAddress" aria-describedby="emailHelp" placeholder="Enter email">
+                            <input id="reg-email" name="email" value="" type="email" class="form-control pull-left" aria-describedby="emailHelp" placeholder="Enter email">
                             <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
                         </div>
                     </div>
@@ -154,7 +176,7 @@
                     <div class="form-group">
                         <div class="col-md-6">
                             <label for="userPassword"></label>
-                            <input name="password" value="" type="password" class="form-control" id="userPassword" placeholder="Password">
+                            <input id="reg-password" name="password" value="" type="password" class="form-control" id="userPassword" placeholder="Password">
                         </div>
                     </div>
 
@@ -162,7 +184,7 @@
                     <div class="form-group">
                         <div class="col-md-4">
                             <label for="firstName"></label>
-                            <input name="firstname" value="" type="text" class="form-control" id="firstName" placeholder="Enter First Name">
+                            <input id="reg-fname" name="firstname" value="" type="text" class="form-control" id="firstName" placeholder="Enter First Name">
                         </div>
                     </div>
 
@@ -170,7 +192,7 @@
                     <div class="form-group">
                         <div class="col-md-4">
                             <label for="lastName"></label>
-                            <input name="lastname" value="" type="text" class="form-control" id="lastName" placeholder="Enter Last Name">
+                            <input id="reg-lname" name="lastname" value="" type="text" class="form-control" id="lastName" placeholder="Enter Last Name">
                         </div>
                     </div>
 
@@ -178,14 +200,14 @@
                     <div class="form-group">
                         <div class="col-md-4">
                             <label for="enterZip"></label>
-                            <input name="zipcode" value="" type="text" class="form-control" id="enterZip" placeholder="Enter Zip Code">
+                            <input id="reg-zipcode" name="zipcode" value="" type="text" class="form-control" id="enterZip" placeholder="Enter Zip Code">
                         </div>
                     </div>
 
                     <!-- Submit Button -->
-                    <div class="col-md-4 offset-md-8">
+                    <div class="col-md-4 offset-md-4">
                         <label></label>
-                        <input type="submit" class="btn btn-primary btn-block btn-lg" aria-hidden="true" value="Submit"></input>
+                        <button type="submit" id="register-btn" class="btn btn-primary btn-block btn-lg"> Register! </button>
                     </div>
                 </form>
 
@@ -325,38 +347,13 @@
     </div>
 </footer>
 
-
-<!--====== MODALS ==========-->
-
-
- <!--======== SIGN IN MODAL ==========-->
-
-<div id="signinModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body text-xs-center">
-                <form action="/Session/loginUser" method="POST" class="form-group">
-                    <h2> Please Sign In... </h2>
-                    <input type="text"  class="form-control" name="email" placeholder="Email Address"/>
-                    <br>
-                    <input type="password" class="form-control" name="password"     placeholder="Password"/>
-                    <br>
-                    <input type="submit" class="btn btn-md btn-primary" value="Sign In"/>
-                    <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--scripts loaded here-->
-
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
 <!-- Bootstrap 4 Alpha  Script-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script src="../../js/notify.min.js"></script>
 <script src="js/scripts.js"></script>
 </body>
 </html>
