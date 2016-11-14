@@ -51,21 +51,24 @@ module.exports = {
   createGnome: function (request, response) {
     
 
-    AddGnomeService.validateGnome(request.body.serial);
+    return AddGnomeService.validateGnome(request.body.serial, function(err, result){
 
+      console.log(result.valid);
+      if(result.valid === true){
 
-    //console.log(request.body.serial);
-    return GnomeDeviceAPI.create({serial:request.body.serial, status:false, nickname:'TESTING', owner:request.body.userID}).exec(function (error) {
-      if(error){
+        return GnomeDeviceAPI.create({serial:request.body.serial, status:false, nickname:'TESTING', owner:request.body.userID}).exec(function (error) {
+          if(error){
 
-        //TODO error handling
-        return console.log(error);
+            //TODO error handling
+            return console.log(error);
+          }
+        
+          else{
+            return response.redirect('/GnomeAPI');
+          }
+        });
       }
-      
-      else{
-        return response.redirect('/GnomeAPI');
-      }
-   });
+    });
   },
 
   //Removes a gnome as a usuable gnome, to be used by the user (Will be used by a Service)

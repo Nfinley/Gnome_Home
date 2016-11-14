@@ -46,9 +46,12 @@ module.exports = {
             }
 
             //Added gnome
-            else
-
-              return callback(null, {valid:true, message:'Gnome Added!'});
+            else{
+              AllGnomesAPI.update({serial: serialNum}, {avaliable:false}).exec(function () {
+                return callback(null, {valid:true, message:'Gnome Added!'});
+              });
+            }
+              
           });
         }
       });

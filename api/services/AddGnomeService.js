@@ -4,14 +4,14 @@ var AllGnomesAPI = require('./../controllers/AllGnomesAPIController');
 
 module.exports = {
 
-  validateGnome: function (serialNum){
+	validateGnome: function (serialNum, callback){
 		//console.log(options);
 
 		//var isValid = AllGnomesAPI.addGnome(options)
 		//console.log(isValid);
-    AllGnomesAPI.validateGnome({serial:serialNum}, function(err, options){
+		AllGnomesAPI.validateGnome({serial:serialNum}, function(err, options){
 
-      console.log(options);
-    });
-  }
+			return callback(null, options);
+		});
+	}
 };
