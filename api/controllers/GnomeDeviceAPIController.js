@@ -12,7 +12,7 @@ module.exports = {
 	getGnomeStatus: function (request, response) {
 
     //console.log(request.params.serial);
-  	return GnomeDeviceAPI.findOne({serial:request.params.serial}).exec(function (error, result) {
+    return GnomeDeviceAPI.findOne({serial:request.params.serial}).exec(function (error, result) {
       
       if(error){
 
@@ -21,10 +21,10 @@ module.exports = {
       }
       else{
 
-  		  console.log(request.params.serial);
+        console.log(request.params.serial);
         return response.send(result.status);
       }
-  	});
+    });
   },
 
   //Takes in the serial number and changes its status (ie. On or Off)
@@ -32,8 +32,8 @@ module.exports = {
 	changeGnome: function (request, response) {
     
     //console.log(request.body.serial, request.body.status);
-	  return GnomeDeviceAPI.update({serial:request.body.serial}, {status:request.body.status}).exec(function (error, result) {
-	   
+    return GnomeDeviceAPI.update({serial:request.body.serial}, {status:request.body.status}).exec(function (error) {
+
       if(error){
 
         //TODO error handling
@@ -50,8 +50,12 @@ module.exports = {
   //Created by user
   createGnome: function (request, response) {
     
+
+    AddGnomeService.validateGnome(request.body.serial);
+
+
     //console.log(request.body.serial);
-    return GnomeDeviceAPI.create({serial:request.body.serial, status:false, owner:request.body.userID}).exec(function (error, result) {
+    return GnomeDeviceAPI.create({serial:request.body.serial, status:false, nickname:'TESTING', owner:request.body.userID}).exec(function (error) {
       if(error){
 
         //TODO error handling
@@ -69,7 +73,7 @@ module.exports = {
   deleteGnome: function (request, response) {
 
     //console.log(request.body.serial);
-    return GnomeDeviceAPI.delete({where:{serial:request.body.serial}}).exec(function (error, result) {
+    return GnomeDeviceAPI.delete({where:{serial:request.body.serial}}).exec(function (error) {
       if(error){
 
         //TODO error handling
