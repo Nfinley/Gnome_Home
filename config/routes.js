@@ -130,4 +130,11 @@ module.exports.routes = {
     // action:'addGnome'
   },
 
+
+  //contactform
+    '/contactform':{
+        controller:'emailController',
+        action:'sendEmail'
+    }
+
 };
