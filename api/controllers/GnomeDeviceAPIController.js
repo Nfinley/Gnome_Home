@@ -53,8 +53,8 @@ module.exports = {
 
     return AddGnomeService.validateGnome(request.body.serial, function(err, result){
 
-      console.log(result.valid);
-      if(result.valid === true){
+      console.log(result.valid, result.message);
+      if(result.valid === false){
 
         return GnomeDeviceAPI.create({serial:request.body.serial, status:false, nickname:'TESTING', owner:request.body.userID}).exec(function (error) {
           if(error){
@@ -64,7 +64,13 @@ module.exports = {
           }
         
           else{
-            return response.redirect('/GnomeAPI');
+            AddGnomeService.getAllGnomes(request.body.userID, function(err, result){
+              console.log(result);
+
+              var ress= [result[0]];
+            //
+              return response.view('dashboard', {gnomes:ress});
+              });
           }
         });
       }

@@ -10,7 +10,6 @@ module.exports = {
   //Sets gnome to activated status (DRM)
   validateGnome: function (request, callback) {
     var serialNum = request.serial;
-    
     //No Serial # error
     if (!serialNum) {
 
@@ -37,7 +36,7 @@ module.exports = {
 
         //Gnome serial number valid
         else{
-          return AllGnomesAPI.update({serial: serialNum}, {status: 'false'}).exec(function (error) {
+          return AllGnomesAPI.update({serial: serialNum}, {avaliable: false}).exec(function (error) {
             
             //mysql error
             if(error){

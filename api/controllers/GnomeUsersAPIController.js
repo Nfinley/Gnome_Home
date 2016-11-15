@@ -43,7 +43,7 @@ module.exports = {
             }
             else {
               //console.log(request.body);
-              console.log("success");
+              return 'true';
             }
           });
         }
@@ -64,5 +64,19 @@ module.exports = {
                 return response.view('dashboard', {gnomes: result});
               }
             });
+    }, 
+    viewSubmit: function (request, callback) {
+        return GnomeUsersAPI.find({where: {id: request.userID}}).populate('gnomes').exec(function (error, result) {
+
+                //TODO error handling
+              if (error) {
+                return console.log(error);
+              }
+              else {
+                //console.log(result);
+                return callback(null, result);
+              }
+            });
     }
+
 };
