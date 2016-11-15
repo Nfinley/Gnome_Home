@@ -43,7 +43,7 @@ module.exports = {
             }
             else {
               //console.log(request.body);
-              return "true";
+              console.log("success");
             }
           });
         }

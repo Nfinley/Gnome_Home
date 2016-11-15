@@ -41,6 +41,7 @@
 
     // Register form on index page
     $('#register-btn').on('click', function(e) {
+        e.preventDefault();
         // Initialize error array
         var errors = [];
 
@@ -110,7 +111,7 @@
                 data: formData
             // This never fires
             }).done(function(response) {
-                //console.log('response: ' + response);
+                console.log('response: ' + response);
                 //$.notify("Registration successful!  Please Login <a href=""> here </a> !");
             });
         }
