@@ -72,9 +72,8 @@ module.exports = {
             AddGnomeService.getAllGnomes(request.body.userid.trim(), function(err, result){
               console.log(result);
 
-              var ress= [result[0]];
-            //
-              return response.view('dashboard', {gnomes:ress});
+              var resultArr = [result[0]];
+              return response.view('dashboard', {gnomes:resultArr, title: 'Gnome @ Home -- Dashboard'});
               });
           }
         });

@@ -61,7 +61,7 @@ module.exports = {
               }
               else {
                 console.log(result);
-                return response.view('dashboard', {gnomes: result});
+                return response.view('dashboard', {gnomes: result, title: 'Gnome @ Home -- Dashboard'});
               }
             });
     }, 
