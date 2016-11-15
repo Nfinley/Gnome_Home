@@ -30,7 +30,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body text-xs-center">
-                <form action="/Session/loginUser" method="POST" class="form-group">
+                <form action="/loginUser" method="POST" class="form-group">
                     <h2> Please Sign In... </h2>
 <<<<<<< Updated upstream
                     <input type="text"  class="form-control" id="signin-email" name="email" placeholder="Email Address"/>
@@ -42,7 +42,7 @@
                     <input type="password" class="form-control" name="password" placeholder="Password"/>
 >>>>>>> Stashed changes
                     <br>
-                    <input type="submit" class="btn btn-md btn-primary" value="Sign In"/>
+                    <button type="submit" class="btn btn-md btn-primary" id="signin-btn">Sign In </button>
                     <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
                 </form>
             </div>

@@ -12,18 +12,22 @@ module.exports = {
     loginUser: function(request, response) {
         var email = request.body.email;
         var password = request.body.password;
-        // console.log(email)
-        // console.log(password)
 
         // Retrieve results so that unique user can be verified, and password may be checked against stored, encrypted password
         GnomeUsersAPI.find().where({'email':email})
         .exec(function(error, result) {
             if(error) {
                 console.log('error: ' + error)
+                response.send("error");
             } else {
-                // Make sure length == 1.  If not, dupe user
                 if(result.length > 1) {
-                    return response.send('Dupe user error!')
+                    // Make sure length == 1.  If not, dupe user
+                    console.log("Dupe user error!");
+                    return response.send("error");
+                } else if (result.length == 0) {
+                    // If no user was found, entered incorrect info
+                    console.log("No user found!");
+                    return response.send("login-fail");
                 }
                 // Get user information from result. Will be used later for session info
                 var encryptedPassword = result[0].password;
@@ -39,13 +43,13 @@ module.exports = {
                 }).exec({
                     // An unexpected error occurred.
                     error: function (err){
-                        console.log('Pass verification failed')
-                        response.redirect('/Session')
+                        console.log('Unexpected password encryption error')
+                        response.send("error");
                     },
                     // Password attempt does not match already-encrypted version
                     incorrect: function (){
                         console.log('User-entered password does not match the stored password.')
-                        response.redirect('/Session')
+                        response.send("login-fail");
                     },
                     // User verified. Add current user information to session here, for later use
                     // Note: There is currently no time expiration on the session. If you would like to set an expiration, do like the following, but edit the time allotted:
@@ -61,8 +65,8 @@ module.exports = {
                         request.session.lastName = lastName;
 
                         console.log('session info: ' , request.session)
-                        // Send the user to their dashboard since they were authenticated
-                        response.redirect('/Dashboard/'+email)
+                        // Send success status. Dashboard page will be loaded client-side
+                        response.send("success");
                     },
                 })
             }
@@ -71,8 +75,8 @@ module.exports = {
 
     logoutUser: function(request, response) {
         // Set user session to false
-        request.session.authenticated = false;
-        response.redirect('/index')
+        request.session.destroy();
+        response.redirect('/');
     }
     // facebook: function(request, response) {
     //     passport.authenticate('facebook', {
