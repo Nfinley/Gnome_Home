@@ -8,11 +8,11 @@
   <input type="submit" value="Submit">
 </form><br>
 
-<p>Add a gnome:</p></br>
+<p>Add a gnome to User:</p></br>
 <form action="/Gnomes/addGnome/" method="POST">
   Serial #: <input type="text" name="serial" value=""><br>
   UserID: <input type="text" name="userID" value=""><br>
-  <!--Gnome Nickname: <input type="text" name="nickname" value=""><br>-->
+  Gnome Nickname: <input type="text" name="nickname" value=""><br>
   <input type="submit" value="Submit">
 </form><br>
 
@@ -26,4 +26,10 @@
   <input type="input" name="serial" value="QAZ123"><br>
   <input type="hidden" name="status" value="false">
   <input type="submit" value="OFF">
+</form><br>
+
+<p>Add a gnome to System:</p></br>
+<form action="/Admin/AddGnome/" method="POST">
+  Serial #: <input type="text" name="serial" value=""><br>
+  <input type="submit" value="Submit">
 </form><br>

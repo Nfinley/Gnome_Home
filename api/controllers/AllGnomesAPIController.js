@@ -57,15 +57,20 @@ module.exports = {
     }
   },
 
-  // finder: function(request, callback){
+  createGnome: function(request, response){
 
-  //   return AllGnomesAPI.findOne({where: {serial: request}}).exec(function(err, result){
-  //     return callback(null, result);
-
-  //   });
-
-  // }
-	
+    console.log(request.body.serial);
+    if(request !== undefined){
+      return AllGnomesAPI.create({serial: request.body.serial, avaliable:true}).exec(function (error) {
+        if(error){
+          console.log(error);
+        }
+        else{
+          return response.send('Added '+request.body.serial);
+        }
+      });
+    }
+  }
 };
 
 

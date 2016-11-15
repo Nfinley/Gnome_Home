@@ -120,6 +120,11 @@ module.exports.routes = {
     '/contactform':{
         controller:'emailController',
         action:'sendEmail'
+    },
+
+    '/Admin/AddGnome':{
+        controller:'AllGnomesAPI',
+        action:'createGnome'
     }
 
 };
