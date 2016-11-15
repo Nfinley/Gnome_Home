@@ -100,19 +100,10 @@
         if (errors.length > 0) {
             var msg = "";
             errors.forEach(function (error, index) {
-                //console.log('msg: ' + msg);
                 msg += error;
             })
-            // Fire modal.
-            //alert(msg);
-            $.notify(
-                msg,
-                "error",
-                {
-                    autoHide: true,
-                    autoHideDelay: 5000
-                }
-            );
+            // Show error notification
+            notify(msg, "error");
             return false;
         }
 
@@ -120,42 +111,51 @@
         var formData = 'email=' + email + '&password=' + password + '&firstname=' + firstName + '&lastname=' + lastName + '&zipcode=' + zipcode;
 
         // Load the spinner to indicate processing
-        $('div.spinner-div').html('<div class="spinner">Loading...</div>');
+        initializeSpinner();
 
         // Run ajax request if no errors occurred
         setTimeout(ajaxCall, 4000);
 
         function ajaxCall() {
-            // Fake the notify.  Stupid Express...
-            notify();
-
-            // Remove spinner
-            $('div.spinner-div').empty();
-
             $.ajax({
                 type: "POST",
                 url: 'Users/addUser',
                 data: formData
-                // This never fires
             }).done(function (response) {
                 console.log('response: ' + response);
-                //$.notify("Registration successful!  Please Login <a href=""> here </a> !");
+
+                // Remove spinner
+                removeSpinner();
+
+                // Clear the form inputs
+                $('#reg-form input').val("");
+
+                // Show success notification
+                notify("Thank you for registering!  \n Please proceed to the Login.", "success");
             });
         }
     }); // #register-btn handler
 
-    // Fake the ajax .done() success return for now. Stupid express response issue.
-    function notify() {
-        // Clear the form inputs
-        $('#reg-form input').val("");
+    // Load the spinner
+    function initializeSpinner() {
+        $('div.spinner-div').html('<div class="spinner">Loading...</div>');
+    }
+
+    // Remove the spinner
+    function removeSpinner() {
+        $('div.spinner-div').empty();
+    }
+
+    // Return globally-positioned notification, from notify js plugin
+    function notify(msg, type) {
         return $.notify(
-            "Thank you for registering!  \n Please proceed to the Login.",
-            "success",
+            msg,
+            type,
             {
                 position: "right",
                 autoHideDelay: 5000
             }
         );
-    } // notify()
+    }
 
 })(jQuery);

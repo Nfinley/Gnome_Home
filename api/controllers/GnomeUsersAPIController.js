@@ -42,8 +42,7 @@ module.exports = {
               return console.log(error);
             }
             else {
-              //console.log(request.body);
-              return 'true';
+              response.send("success");
             }
           });
         }
@@ -64,7 +63,7 @@ module.exports = {
                 return response.view('dashboard', {gnomes: result, title: 'Gnome @ Home -- Dashboard'});
               }
             });
-    }, 
+    },
     viewSubmit: function (request, callback) {
         return GnomeUsersAPI.find({where: {id: request.userID}}).populate('gnomes').exec(function (error, result) {
 
