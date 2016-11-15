@@ -62,15 +62,13 @@ module.exports.routes = {
   ***************************************************************************/
 
 //Dashboard route
+/*
   '/dashboard': {
     view: 'dashboard',
     locals: {
       title:'Gnome @ Home -- Dashboard'
     }
-  },
-  //Use GET POST PUT DELETE first if using same route for different requests
-  // ex 'PUT /GNOMEAPI'
-
+  },*/
 
   //Gnome device routes
   '/GnomeAPI/getGnomeStatus/:serial': {
@@ -94,18 +92,14 @@ module.exports.routes = {
     action: 'addUser'
   },
 
-
-  '/Dashboard/:email':{
-    controller : 'GnomeUsersAPI',
+  // Dashboard routes (user is only allowed if authenticated)
+  '/Dashboard':{
+    controller: 'GnomeUsersAPI',
     action: 'viewUser'
   },
 
-  /* Note: the following is session login testing */
   // User session management (login/logout)
-  '/Session':{
-    view: 'login'
-  },
-  '/Session/loginUser':{
+  '/loginUser':{
     controller: 'SessionController',
     action: 'loginUser'
   },
@@ -114,14 +108,6 @@ module.exports.routes = {
     action: 'logoutUser'
   },
 
-  // Dashboard route (user is only sent here if authenticated first)
-  '/Dashboard':{
-    controller: 'DashboardController',
-    action: 'authenticate',
-    view: 'dashboard'
-  },
-  /* End login session testing */
-
   //Add device routes
   '/Gnomes/addGnome':{
     controller :'GnomeDeviceAPI',
@@ -129,7 +115,6 @@ module.exports.routes = {
     // controller :'AllGnomesAPI',
     // action:'addGnome'
   },
-
 
   //contactform
     '/contactform':{

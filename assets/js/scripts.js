@@ -7,6 +7,9 @@
     var validEmail = /(^[\w-]+(?:\.[\w-]+)*@(?:[\w-]+\.)+[a-zA-Z]{2,7}$)|(^N\/A$)/;
     var validPass = /^(?=.*\d)(?=.*[@#\-_$%^&+=§!\?])(?=.*[a-z])(?=.*[A-Z])[0-9A-Za-z@#\-_$%^&+=§!\?]{8,}$/;
 
+    // Global delay for spinner processing
+    var timeDelay = 4000;
+
     $('body').scrollspy({
         target: '.navbar-fixed-top',
         offset: 60
@@ -39,6 +42,64 @@
         position: 'right'
     });
 
+    // Login modal form on index page
+    $('#signin-btn').on('click', function(e) {
+        e.preventDefault();
+        // Initialize error array
+        var errorArr = [];
+
+        // Get input values
+        var email = $('#signin-email').val();
+        var password = $('#signin-password').val();
+
+        // Validate inputs
+        if(!validEmail.test(email)) {
+            errorArr.push("Please enter a valid email address! \n");
+        }
+        if(!password) {
+            errorArr.push("Please enter a valid password!");
+        }
+
+        // Check for errors
+        if(checkErrors(errorArr)) {
+            return false;
+        }
+
+        // Load the spinner to indicate processing
+        initializeSpinner();
+
+        // Build data string for form data
+        var formData = 'email=' + email + '&password=' + password;
+
+        // Submit data to server
+        $.ajax({
+            type: "POST",
+            url: '/loginUser',
+            data: formData
+        // Note: the following will only fire if login was unsuccessful
+        // Return string "error" == server/mysql error
+        // Return string "login-fail" == user incorrect info submission
+        // Return string "success" == user verified, and will be redirected to dashboard page
+        }).done(function (response) {
+            console.log('response: ' + response);
+            // Delay success actions to simulate processing
+            setTimeout(function() {
+                // Remove spinner
+                removeSpinner();
+
+                // Notify user of errors
+                if(response == "login-fail") {
+                    notify("You entered in incorrect email or password. \n Please try again.", "error");
+                } else if (response == "error") {
+                    notify("We are sorry, but there was an internal error. \n Please contact our team if it persists.", "error");
+                } else if (response == "success") {
+                    //window.location.href = "/Dashboard/" + email;
+                    window.location.href = "/Dashboard";
+                }
+            }, timeDelay);
+        });
+    });
+
     // Contact form on index page
     $('#submitEmail').on('click', function (e) {
         e.preventDefault();
@@ -55,7 +116,7 @@
         if(!validEmail.test(email)) {
             errorArr.push("Please enter a valid email address! \n");
         }
-        if(!validName.test(name)) {
+        if(!name) {
             errorArr.push("Please enter a valid name! \n");
         }
         if(!message) {
@@ -67,22 +128,35 @@
             return false;
         }
 
+        // Load the spinner to indicate processing
+        initializeSpinner();
+
         // Build data string for form data
         var formData = 'email=' + email + '&name=' + name + '&message=' + message;
 
+        // Submit data to server
         $.ajax({
             type: "POST",
             url: '/contactform',
             data: formData
         }).done(function (response) {
-            console.log('response: ' + response);
-            $('#name').val("");
-            $('#email').val("");
-            $('#message').val("");
-            //$.notify("Registration successful!  Please Login <a href=""> here </a> !");
-        });
+            // Delay success actions to simulate processing
+            setTimeout(function() {
+                console.log('response: ' + response);
 
-    });
+                // Remove spinner
+                removeSpinner();
+
+                // Clear form inputs
+                $('#name').val("");
+                $('#email').val("");
+                $('#message').val("");
+
+                // Show the success notification
+                notify("Your message was sent. \n Thank you for contacting us!  \n A gnome will get back to you shortly.", "success");
+            }, timeDelay);
+        });
+    }); // END contact form button handler
 
     // Register form on index page
     $('#register-btn').on('click', function (e) {
@@ -119,21 +193,20 @@
             return false;
         }
 
-        // Build data string for form data
-        var formData = 'email=' + email + '&password=' + password + '&firstname=' + firstName + '&lastname=' + lastName + '&zipcode=' + zipcode;
-
         // Load the spinner to indicate processing
         initializeSpinner();
 
-        // Run ajax request if no errors occurred
-        setTimeout(ajaxCall, 4000);
+        // Build data string for form data
+        var formData = 'email=' + email + '&password=' + password + '&firstname=' + firstName + '&lastname=' + lastName + '&zipcode=' + zipcode;
 
-        function ajaxCall() {
-            $.ajax({
-                type: "POST",
-                url: 'Users/addUser',
-                data: formData
-            }).done(function (response) {
+        // Submit data to server
+        $.ajax({
+            type: "POST",
+            url: 'Users/addUser',
+            data: formData
+        }).done(function (response) {
+            // Delay success actions to simulate processing
+            setTimeout(function() {
                 console.log('response: ' + response);
 
                 // Remove spinner
@@ -149,9 +222,9 @@
                 $('#signin-email').val(email);
                 $('#signin-password').val(password);
                 $('#signinModal').modal("show");
-            });
-        }
-    }); // #register-btn handler
+            }, timeDelay);
+        });
+    }); // END register form button handler
 
     // Show form errors if any occurred
     function checkErrors(errorArr) {
