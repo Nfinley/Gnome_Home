@@ -61,10 +61,6 @@
             $('#name').val("");
             $('#email').val("");
             $('#message').val("");
-
-
-
-
             //$.notify("Registration successful!  Please Login <a href=""> here </a> !");
         });
 
