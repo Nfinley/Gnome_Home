@@ -96,12 +96,13 @@
                             <input class="form-control" type="text" name="serial" value="" id="Serial Number">
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <label for="User ID" class="col-xs-4 col-form-label">User ID:</label>
                         <div class="col-xs-8">
                             <input class="form-control" type="text" name="userID" value="" id="User ID">
                         </div>
-                    </div>
+                    </div> -->
+                     <input type="hidden" name="userid" value="<%= gnomes[0].id %>">
 
                     <!--Serial #: <input type="text" name="serial" value=""><br>-->
                     <!--UserID: <input type="text" name="userID" value=""><br>-->
@@ -168,8 +169,8 @@
                                     <!--on/off switch html-->
                                     <div class="text-center btn">
                                         <div class="onoffswitch">
-                                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox"
-                                                   id="<%= gnomes[0].gnomes[i].serial %>">
+                                            <input type="checkbox" name="<%= gnomes[0].gnomes[i].serial %>" class="onoffswitch-checkbox"
+                                                   id="<%= gnomes[0].gnomes[i].serial %>" data-status="<%= gnomes[0].gnomes[i].status %>">
 
                                             <label class="onoffswitch-label" for="<%= gnomes[0].gnomes[i].serial %>">
                                                 <span class="onoffswitch-inner"></span>
@@ -246,5 +247,31 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
 <script src="../../js/jquery.slidereveal.min.js"></script>
+<script>
+
+$(document).ready(function(){
+    $('.onoffswitch-checkbox').click(function(e){
+        
+        var serial = $(this).attr('id');
+        var status = $(this).data('status');
+
+        if(status === 'true'){
+            $(this).data('status','false');
+        }
+        else{
+            $(this).data('status','true');
+        }
+        status = $(this).data('status');
+        dataObj={serial:serial, status:status};
+        console.log(dataObj);
+         $.ajax({url: '/GnomeAPI/changeGnome', data:dataObj, method: 'POST'})
+        .done(function(response) {
+            e.preventDefault();
+        });
+     });
+
+});
+
+</script>
 </body>
 </html>

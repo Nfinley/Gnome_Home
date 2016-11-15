@@ -19,6 +19,11 @@ module.exports = {
         //TODO error handling
         return console.log(error);
       }
+      else if (result === undefined){
+        console.log(request.params.serial+' is not validated');
+
+      }
+
       else{
 
         console.log(request.params.serial);
@@ -30,7 +35,7 @@ module.exports = {
   //Takes in the serial number and changes its status (ie. On or Off)
   //Used by gnome devices
 	changeGnome: function (request, response) {
-    
+    console.log(request.body);
     //console.log(request.body.serial, request.body.status);
     return GnomeDeviceAPI.update({serial:request.body.serial}, {status:request.body.status}).exec(function (error) {
 
@@ -54,9 +59,9 @@ module.exports = {
     return AddGnomeService.validateGnome(request.body.serial, function(err, result){
 
       console.log(result.valid, result.message);
-      if(result.valid === false){
+      if(result.valid === true){
 
-        return GnomeDeviceAPI.create({serial:request.body.serial, status:false, nickname:'TESTING', owner:request.body.userID}).exec(function (error) {
+        return GnomeDeviceAPI.create({serial:request.body.serial, status:false, nickname:request.body.nickname, owner:request.body.userid.trim()}).exec(function (error) {
           if(error){
 
             //TODO error handling
@@ -64,7 +69,7 @@ module.exports = {
           }
         
           else{
-            AddGnomeService.getAllGnomes(request.body.userID, function(err, result){
+            AddGnomeService.getAllGnomes(request.body.userid.trim(), function(err, result){
               console.log(result);
 
               var ress= [result[0]];
