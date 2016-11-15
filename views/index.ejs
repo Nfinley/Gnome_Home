@@ -4,7 +4,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Codeply">
 <!-- Bootstrap 4 Alpha -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+      integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
 
 <!-- Animate CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -31,9 +32,15 @@
             <div class="modal-body text-xs-center">
                 <form action="/Session/loginUser" method="POST" class="form-group">
                     <h2> Please Sign In... </h2>
+<<<<<<< Updated upstream
                     <input type="text"  class="form-control" id="signin-email" name="email" placeholder="Email Address"/>
                     <br>
                     <input type="password" class="form-control" id="signin-password" name="password" placeholder="Password"/>
+=======
+                    <input type="text" class="form-control" name="email" placeholder="Email Address"/>
+                    <br>
+                    <input type="password" class="form-control" name="password" placeholder="Password"/>
+>>>>>>> Stashed changes
                     <br>
                     <input type="submit" class="btn btn-md btn-primary" value="Sign In"/>
                     <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
@@ -73,7 +80,8 @@
                 <br>
                 <h1>Gnome @ Home</h1>
                 <br>
-                <h5 class="wow fadeIn text-normal wow fadeIn">You always have a Gnome at home no matter where you roam!</h5>
+                <h5 class="wow fadeIn text-normal wow fadeIn">You always have a Gnome at home no matter where you
+                    roam!</h5>
                 <br>
                 <a href="#register" class="btn btn-primary-outline btn-xl page-scroll wow fadeInUp m-t-3">Register</a>
                 <br>
@@ -88,7 +96,8 @@
 
 <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-        <button class="navbar-toggler hidden-md-up float-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+        <button class="navbar-toggler hidden-md-up float-right" type="button" data-toggle="collapse"
+                data-target="#collapsingNavbar">
             ☰
         </button>
         <a class="navbar-brand page-scroll" href="#first">Gnome @ Home</a>
@@ -104,7 +113,8 @@
                     <a class="nav-link page-scroll" href="#last">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" data-toggle="modal" title="Sign In Modal" href="#signinModal">Log In</a>
+                    <a class="nav-link page-scroll" data-toggle="modal" title="Sign In Modal" href="#signinModal">Log
+                        In</a>
                 </li>
             </ul>
         </div>
@@ -124,26 +134,32 @@
         <div class="card-group">
             <!-- card -->
             <div class="card">
-                <img class="card-img-top img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample13.jpg" alt="Card image cap">
+                <img class="card-img-top img-fluid"
+                     src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample13.jpg" alt="Card image cap">
                 <div class="card-block">
                     <h4 class="card-title">Gnome One</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec scelerisque libero.</p>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec
+                        scelerisque libero.</p>
                 </div>
             </div>
             <!-- card -->
             <div class="card">
-                <img class="card-img-top img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample19.jpg" alt="Card image cap">
+                <img class="card-img-top img-fluid"
+                     src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample19.jpg" alt="Card image cap">
                 <div class="card-block">
                     <h4 class="card-title">Gnome Two</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec scelerisque libero.</p>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec
+                        scelerisque libero.</p>
                 </div>
             </div>
             <!-- card -->
             <div class="card">
-                <img class="card-img-top img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample14.jpg" alt="Card image cap">
+                <img class="card-img-top img-fluid"
+                     src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample14.jpg" alt="Card image cap">
                 <div class="card-block">
                     <h4 class="card-title">Gnome Three</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec scelerisque libero.</p>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec
+                        scelerisque libero.</p>
 
                 </div>
             </div>
@@ -167,7 +183,8 @@
                         <!--EMAIL ADDRESS-->
                         <div class="col-md-6">
                             <label for="emailAddress"></label>
-                            <input id="reg-email" name="email" value="" type="email" class="form-control pull-left" aria-describedby="emailHelp" placeholder="Enter email">
+                            <input id="reg-email" name="email" value="" type="email" class="form-control pull-left"
+                                   aria-describedby="emailHelp" placeholder="Enter email">
                             <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
                         </div>
                     </div>
@@ -176,7 +193,8 @@
                     <div class="form-group">
                         <div class="col-md-6">
                             <label for="userPassword"></label>
-                            <input id="reg-password" name="password" value="" type="password" class="form-control" id="userPassword" placeholder="Password">
+                            <input id="reg-password" name="password" value="" type="password" class="form-control"
+                                   id="userPassword" placeholder="Password">
                         </div>
                     </div>
 
@@ -184,7 +202,8 @@
                     <div class="form-group">
                         <div class="col-md-4">
                             <label for="firstName"></label>
-                            <input id="reg-fname" name="firstname" value="" type="text" class="form-control" id="firstName" placeholder="Enter First Name">
+                            <input id="reg-fname" name="firstname" value="" type="text" class="form-control"
+                                   id="firstName" placeholder="Enter First Name">
                         </div>
                     </div>
 
@@ -192,7 +211,8 @@
                     <div class="form-group">
                         <div class="col-md-4">
                             <label for="lastName"></label>
-                            <input id="reg-lname" name="lastname" value="" type="text" class="form-control" id="lastName" placeholder="Enter Last Name">
+                            <input id="reg-lname" name="lastname" value="" type="text" class="form-control"
+                                   id="lastName" placeholder="Enter Last Name">
                         </div>
                     </div>
 
@@ -200,14 +220,16 @@
                     <div class="form-group">
                         <div class="col-md-4">
                             <label for="enterZip"></label>
-                            <input id="reg-zipcode" name="zipcode" value="" type="text" class="form-control" id="enterZip" placeholder="Enter Zip Code">
+                            <input id="reg-zipcode" name="zipcode" value="" type="text" class="form-control"
+                                   id="enterZip" placeholder="Enter Zip Code">
                         </div>
                     </div>
 
                     <!-- Submit Button -->
                     <div class="col-md-4 offset-md-4">
                         <label></label>
-                        <button type="submit" id="register-btn" class="btn btn-primary btn-block btn-lg"> Register! </button>
+                        <button type="submit" id="register-btn" class="btn btn-primary btn-block btn-lg"> Register!
+                        </button>
                     </div>
                 </form>
 
@@ -284,11 +306,14 @@
                     </div>
                     <div class="col-md-12">
                         <label></label>
-                        <textarea class="form-control" rows="9" placeholder="Your message here.." id="message"></textarea>
+                        <textarea class="form-control" rows="9" placeholder="Your message here.."
+                                  id="message"></textarea>
                     </div>
                     <div class="col-md-4 offset-md-4">
                         <label></label>
-                        <button id="submitEmail" type="button" data-toggle="modal" data-target="#alertModal" class="btn btn-primary btn-block btn-lg">Send <i class="ion-android-arrow-forward"></i></button>
+                        <button id="submitEmail" type="button" data-toggle="modal" data-target="#alertModal"
+                                class="btn btn-primary btn-block btn-lg">Send <i class="ion-android-arrow-forward"></i>
+                        </button>
                     </div>
                 </form>
             </div>
@@ -301,52 +326,40 @@
 <footer id="footer">
     <div class="container">
         <div class="row">
-            <div class="col-xs-6 col-sm-3">
-                <h6 class="text-uppercase">Bootstrap 4</h6>
-                <ul class="list-unstyled">
-                    <li><a href="https://medium.com/@bootply/bootstrap-4-whats-new-visual-guide-c84dd81d8387" target="ext">What's New</a></li>
-                    <li><a href="http://codeply.com/tagged/bootstrap-4" target="ext">Examples</a></li>
-                    <li><a href="http://getbootstrap.com" target="ext">Official</a></li>
-                    <li><a href="http://www.codeply.com/go/p/bootstrap_4.0.alpha" target="ext">Playground</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-6 col-sm-3 column">
-                <h6 class="text-uppercase">About</h6>
-                <ul class="list-unstyled">
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Delivery Information</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms &amp; Conditions</a></li>
-                </ul>
-            </div>
-            <div class="col-xs-12 col-sm-3 column">
-                <h6 class="text-uppercase">Stay Posted</h6>
-                <form>
-                    <div class="form-group">
-                        <input type="text" class="form-control" title="No spam, we promise!" placeholder="Tell us your email">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#alertModal" type="button">Subscribe for updates</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-xs-12 col-sm-3 text-xs-right">
-                <h6 class="text-uppercase">Follow</h6>
-                <ul class="list-inline">
-                    <li class="list-inline-item"><a rel="nofollow" href="" title="Twitter"><i class="icon-lg ion-social-twitter-outline"></i></a>&nbsp;</li>
-                    <li class="list-inline-item"><a rel="nofollow" href="" title="Facebook"><i class="icon-lg ion-social-facebook-outline"></i></a></li>
-                </ul>
+
+            <!--for future integration-->
+            <!--<div class="col-xs-6 col-sm-3 text-xs-left">-->
+            <!--<h6 class="text-uppercase">About</h6>-->
+            <!--<ul class="list-unstyled">-->
+            <!--<li><a href="#">Contact Us</a></li>-->
+            <!--<li><a href="#">Delivery Information</a></li>-->
+            <!--<li><a href="#">Privacy Policy</a></li>-->
+            <!--<li><a href="#">Terms &amp; Conditions</a></li>-->
+            <!--</ul>-->
+            <!--</div>-->
+
+            <div align="center">
+                <h6 class="text-uppercase">Follow Us!</h6>
+
+                <a rel="" href="https://github.com/Nfinley/Gnome_Home" title="Twitter"><i
+                            class="icon-lg ion-social-github-outline"></i></a>
+                <br><br>
+                <span class="text-muted small"><a href="">Gnome@Home</a> <br>©2016</span>
+
             </div>
         </div>
         <br>
-        <span class="pull-right text-muted small"><a href="http://bootstrap4.guide">Made by Themes.guide</a> ©2015-2016 Company</span>
+
+    </div>
     </div>
 </footer>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
 <!-- Bootstrap 4 Alpha  Script-->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
+        integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK"
+        crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
 <script src="../../js/notify.min.js"></script>
