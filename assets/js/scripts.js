@@ -39,23 +39,41 @@
         position: 'right'
     });
 
+    // Contact form on index page
     $('#submitEmail').on('click', function (e) {
-
         e.preventDefault();
 
+        // Initialize error array
+        var errorArr = [];
+
+        // Get input values
         var email = $('#email').val();
         var name = $('#name').val();
         var message = $('#message').val();
 
-        var formData = 'email=' + email + '&name=' + name + '&message=' + message;
+        // Validate inputs
+        if(!validEmail.test(email)) {
+            errorArr.push("Please enter a valid email address! \n");
+        }
+        if(!validName.test(name)) {
+            errorArr.push("Please enter a valid name! \n");
+        }
+        if(!message) {
+            errorArr.push("Please enter a valid message! \n");
+        }
 
-        console.log("name is " + name);
+        // Check for errors
+        if(checkErrors(errorArr)) {
+            return false;
+        }
+
+        // Build data string for form data
+        var formData = 'email=' + email + '&name=' + name + '&message=' + message;
 
         $.ajax({
             type: "POST",
             url: '/contactform',
             data: formData
-            // This never fires
         }).done(function (response) {
             console.log('response: ' + response);
             $('#name').val("");
@@ -70,7 +88,7 @@
     $('#register-btn').on('click', function (e) {
         e.preventDefault();
         // Initialize error array
-        var errors = [];
+        var errorArr = [];
 
         // Get input values
         var email = $('#reg-email').val();
@@ -81,29 +99,23 @@
 
         // Validate inputs
         if (!validEmail.test(email)) {
-            errors.push("Please enter a valid email address!\n");
+            errorArr.push("Please enter a valid email address!\n");
         }
         if (!validPass.test(password)) {
-            errors.push("Please enter a valid password!\n");
+            errorArr.push("Please enter a valid password!\n");
         }
         if (!validName.test(firstName)) {
-            errors.push("Please enter a valid first name.\n");
+            errorArr.push("Please enter a valid first name.\n");
         }
         if (!validName.test(lastName)) {
-            errors.push("Please enter a valid last name.\n");
+            errorArr.push("Please enter a valid last name.\n");
         }
         if (!validNumber.test(zipcode)) {
-            errors.push("Please enter a valid zip code.");
+            errorArr.push("Please enter a valid zip code.");
         }
 
-        // Check for errors
-        if (errors.length > 0) {
-            var msg = "";
-            errors.forEach(function (error, index) {
-                msg += error;
-            })
-            // Show error notification
-            notify(msg, "error");
+        // Check for errors, and display any if necessary
+        if(checkErrors(errorArr)) {
             return false;
         }
 
@@ -132,9 +144,29 @@
 
                 // Show success notification
                 notify("Thank you for registering!  \n Please proceed to the Login.", "success");
+
+                // Show the sign in modal, and populate form inputs with user-supplied data
+                $('#signin-email').val(email);
+                $('#signin-password').val(password);
+                $('#signinModal').modal("show");
             });
         }
     }); // #register-btn handler
+
+    // Show form errors if any occurred
+    function checkErrors(errorArr) {
+        if (errorArr.length > 0) {
+            var msg = "";
+            errorArr.forEach(function (error, index) {
+                msg += error;
+            })
+            // Show error notification
+            notify(msg, "error");
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     // Load the spinner
     function initializeSpinner() {
