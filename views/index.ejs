@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="css/spinner.css">
 
 </head>
+
 <body class="bg-faded">
 
 <!-- Spinner container -->
@@ -32,11 +33,12 @@
             <div class="modal-body text-xs-center">
                 <form action="/loginUser" method="POST" class="form-group">
                     <h2> Please Sign In... </h2>
-                    <input type="text"  class="form-control" id="signin-email" name="email" placeholder="Email Address"/>
+                    <input type="text" class="form-control" id="signin-email" name="email" placeholder="Email Address"/>
                     <br>
-                    <input type="password" class="form-control" id="signin-password" name="password" placeholder="Password"/>
+                    <input type="password" class="form-control" id="signin-password" name="password"
+                           placeholder="Password"/>
                     <br>
-                    <button type="submit" class="btn btn-md btn-primary" id="signin-btn">Sign In </button>
+                    <button type="submit" class="btn btn-md btn-primary" id="signin-btn">Sign In</button>
                     <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
                 </form>
             </div>
@@ -141,7 +143,8 @@
                      src="images/thermostat.jpg" alt="Card image cap">
                 <div class="card-block">
                     <h4 class="card-title">Thermostats</h4>
-                    <p class="card-text">Who wants to get out of the warm covers to change the thermostat. Let our gnomes take care of it.</p>
+                    <p class="card-text">Who wants to get out of the warm covers to change the thermostat. Let our
+                        gnomes take care of it.</p>
                 </div>
             </div>
             <!-- card -->
@@ -150,7 +153,8 @@
                      src="images/garage.jpg" alt="Card image cap">
                 <div class="card-block">
                     <h4 class="card-title">Garage Door Openers</h4>
-                    <p class="card-text">Open the garage door from anywhere. You can always let someone in with the help of our gnomes.</p>
+                    <p class="card-text">Open the garage door from anywhere. You can always let someone in with the help
+                        of our gnomes.</p>
 
                 </div>
             </div>
@@ -194,7 +198,7 @@
                         <div class="col-md-4">
                             <label for="firstName"></label>
                             <input id="reg-fname" name="firstname" value="" type="text" class="form-control"
-                                   id="firstName" placeholder="Enter First Name">
+                                   id="firstName" placeholder="First Name">
                         </div>
                     </div>
 
@@ -203,7 +207,7 @@
                         <div class="col-md-4">
                             <label for="lastName"></label>
                             <input id="reg-lname" name="lastname" value="" type="text" class="form-control"
-                                   id="lastName" placeholder="Enter Last Name">
+                                   id="lastName" placeholder="Last Name">
                         </div>
                     </div>
 
@@ -212,7 +216,7 @@
                         <div class="col-md-4">
                             <label for="enterZip"></label>
                             <input id="reg-zipcode" name="zipcode" value="" type="text" class="form-control"
-                                   id="enterZip" placeholder="Enter Zip Code">
+                                   id="enterZip" placeholder="Zip Code">
                         </div>
                     </div>
 
@@ -244,10 +248,12 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="feature">
-                    <img src="images/gnome_about_us.jpg" id="about_us">
+                    <img class="img-fluid" src="images/gnome_about_us.jpg" id="aboutUs">
+
                     <br>
                     <br>
-                    <h6 class="text-uppercase text-xs-center">Matt Holland - Nigel Finley - Christine Baba - Saidi Granados - Eric Steinberg</h6>
+                    <h6 class="text-uppercase text-xs-center">Matt Holland - Nigel Finley - Christine Baba - Saidi
+                        Granados - Eric Steinberg</h6>
                 </div>
             </div>
         </div>
@@ -290,6 +296,7 @@
     </div>
 </section>
 
+
 <!-- Footer -->
 
 <footer id="footer">
@@ -322,6 +329,7 @@
     </div>
     </div>
 </footer>
+
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>

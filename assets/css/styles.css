@@ -214,7 +214,6 @@ footer h4, footer h6 {
 
 header {
     position: relative;
-    min-height: auto;
     text-align: center;
     color: #001A33;
     width: 100%;
@@ -363,4 +362,8 @@ img::-moz-selection {
     align-content: center;
     margin-left: 25%;
 
+}
+
+.card-text {
+    text-align: justify;
 }
