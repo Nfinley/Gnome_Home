@@ -59,6 +59,8 @@ module.exports = {
     return AddGnomeService.validateGnome(request.body.serial, function(err, result){
 
       console.log(result.valid, result.message);
+      var message = result.message;
+
       if(result.valid === true){
 
         return GnomeDeviceAPI.create({serial:request.body.serial, status:false, nickname:request.body.nickname, owner:request.body.userid.trim()}).exec(function (error) {
@@ -73,7 +75,7 @@ module.exports = {
               console.log(result);
 
               var resultArr = [result[0]];
-              return response.view('dashboard', {gnomes:resultArr, title: 'Gnome @ Home -- Dashboard', message:result.message});
+              return response.view('dashboard', {gnomes:resultArr, title: 'Gnome @ Home -- Dashboard', message:message});
               });
           }
         });
@@ -83,7 +85,8 @@ module.exports = {
               console.log(result);
 
               var resultArr = [result[0]];
-              return response.view('dashboard', {gnomes:resultArr, title: 'Gnome @ Home -- Dashboard', message:result.message});
+              console.log(result.valid, result.message);
+              return response.view('dashboard', {gnomes:resultArr, title: 'Gnome @ Home -- Dashboard', message:message});
               });
           }
     });

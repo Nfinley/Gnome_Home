@@ -1,5 +1,33 @@
+$(document).ready(function(){
+
+    $('.onoffswitch-checkbox').click(function(e){
+
+        var serial = $(this).attr('id');
+        var status = $(this).data('status');
+
+        if(status === 'true'){
+            $(this).data('status','false');
+        }
+        else{
+            $(this).data('status','true');
+        }
+        status = $(this).data('status');
+        dataObj={serial:serial, status:status};
+        console.log(dataObj);
+         $.ajax({url: '/GnomeAPI/changeGnome', data:dataObj, method: 'POST'})
+        .done(function() {
+            e.preventDefault();
+        });
+     });
+    
+    if($('#addMessage').html()!== ''){
+
+        $('#ResultGnomeModal').modal('show');
+    }
+});
+
 (function ($) {
-    "use strict";
+    'use strict';
 
     // Global regex patterns
     var validName = /^[A-Za-z]+$/;
@@ -31,12 +59,12 @@
     });
 
     $('#galleryModal').on('show.bs.modal', function (e) {
-        $('#galleryImage').attr("src", $(e.relatedTarget).data("src"));
+        $('#galleryImage').attr('src', $(e.relatedTarget).data('src'));
     });
 
     // Settings slider on dashboard page
     $('#slider').slideReveal({
-        trigger: $("#trigger"),
+        trigger: $('#trigger'),
         push: false,
         overlay: false,
         position: 'right'
@@ -54,10 +82,10 @@
 
         // Validate inputs
         if(!validEmail.test(email)) {
-            errorArr.push("Please enter a valid email address! \n");
+            errorArr.push('Please enter a valid email address! \n');
         }
         if(!password) {
-            errorArr.push("Please enter a valid password!");
+            errorArr.push('Please enter a valid password!');
         }
 
         // Check for errors
@@ -73,7 +101,7 @@
 
         // Submit data to server
         $.ajax({
-            type: "POST",
+            type: 'POST',
             url: '/loginUser',
             data: formData
         // Note: the following will only fire if login was unsuccessful
@@ -88,13 +116,13 @@
                 removeSpinner();
 
                 // Notify user of errors
-                if(response == "login-fail") {
-                    notify("You entered in incorrect email or password. \n Please try again.", "error");
-                } else if (response == "error") {
-                    notify("We are sorry, but there was an internal error. \n Please contact our team if it persists.", "error");
-                } else if (response == "success") {
+                if(response == 'login-fail') {
+                    notify('You entered in incorrect email or password. \n Please try again.', 'error');
+                } else if (response == 'error') {
+                    notify('We are sorry, but there was an internal error. \n Please contact our team if it persists.', 'error');
+                } else if (response == 'success') {
                     //window.location.href = "/Dashboard/" + email;
-                    window.location.href = "/Dashboard";
+                    window.location.href = '/Dashboard';
                 }
             }, timeDelay);
         });
@@ -114,13 +142,13 @@
 
         // Validate inputs
         if(!validEmail.test(email)) {
-            errorArr.push("Please enter a valid email address! \n");
+            errorArr.push('Please enter a valid email address! \n');
         }
         if(!name) {
-            errorArr.push("Please enter a valid name! \n");
+            errorArr.push('Please enter a valid name! \n');
         }
         if(!message) {
-            errorArr.push("Please enter a valid message! \n");
+            errorArr.push('Please enter a valid message! \n');
         }
 
         // Check for errors
@@ -136,7 +164,7 @@
 
         // Submit data to server
         $.ajax({
-            type: "POST",
+            type: 'POST',
             url: '/contactform',
             data: formData
         }).done(function (response) {
@@ -148,12 +176,12 @@
                 removeSpinner();
 
                 // Clear form inputs
-                $('#name').val("");
-                $('#email').val("");
-                $('#message').val("");
+                $('#name').val('');
+                $('#email').val('');
+                $('#message').val('');
 
                 // Show the success notification
-                notify("Your message was sent. \n Thank you for contacting us!  \n A gnome will get back to you shortly.", "success");
+                notify('Your message was sent. \n Thank you for contacting us!  \n A gnome will get back to you shortly.', 'success');
             }, timeDelay);
         });
     }); // END contact form button handler
@@ -173,19 +201,19 @@
 
         // Validate inputs
         if (!validEmail.test(email)) {
-            errorArr.push("Please enter a valid email address!\n");
+            errorArr.push('Please enter a valid email address!\n');
         }
         if (!validPass.test(password)) {
-            errorArr.push("Please enter a valid password!\n");
+            errorArr.push('Please enter a valid password!\n');
         }
         if (!validName.test(firstName)) {
-            errorArr.push("Please enter a valid first name.\n");
+            errorArr.push('Please enter a valid first name.\n');
         }
         if (!validName.test(lastName)) {
-            errorArr.push("Please enter a valid last name.\n");
+            errorArr.push('Please enter a valid last name.\n');
         }
         if (!validNumber.test(zipcode)) {
-            errorArr.push("Please enter a valid zip code.");
+            errorArr.push('Please enter a valid zip code.');
         }
 
         // Check for errors, and display any if necessary
@@ -201,7 +229,7 @@
 
         // Submit data to server
         $.ajax({
-            type: "POST",
+            type: 'POST',
             url: 'Users/addUser',
             data: formData
         }).done(function (response) {
@@ -213,15 +241,15 @@
                 removeSpinner();
 
                 // Clear the form inputs
-                $('#reg-form input').val("");
+                $('#reg-form input').val('');
 
                 // Show success notification
-                notify("Thank you for registering!  \n Please proceed to the Login.", "success");
+                notify('Thank you for registering!  \n Please proceed to the Login.', 'success');
 
                 // Show the sign in modal, and populate form inputs with user-supplied data
                 $('#signin-email').val(email);
                 $('#signin-password').val(password);
-                $('#signinModal').modal("show");
+                $('#signinModal').modal('show');
             }, timeDelay);
         });
     }); // END register form button handler
@@ -229,12 +257,12 @@
     // Show form errors if any occurred
     function checkErrors(errorArr) {
         if (errorArr.length > 0) {
-            var msg = "";
-            errorArr.forEach(function (error, index) {
+            var msg = '';
+            errorArr.forEach(function (error) {
                 msg += error;
-            })
+            });
             // Show error notification
-            notify(msg, "error");
+            notify(msg, 'error');
             return true;
         } else {
             return false;
@@ -257,7 +285,7 @@
             msg,
             type,
             {
-                position: "right",
+                position: 'right',
                 autoHideDelay: 5000
             }
         );

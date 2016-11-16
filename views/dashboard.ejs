@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Gnome @ Home</title>
     <meta name="description" content="You always have a Gnome at home no matter where you roam!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Codeply">
@@ -119,6 +114,24 @@
         </div>
     </div>
 </div>
+
+
+
+<div id="ResultGnomeModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body text-xs-center">
+                <h2 class="text-xs-center" id="addMessage"><%= message %></h2>
+
+                <br>
+                <button class="btn btn-primary btn-lg" data-dismiss="modal" aria-hidden="true"> OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -269,38 +282,11 @@
     </div>
     </div>
 </footer>
-
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
 <script src="../../js/jquery.slidereveal.min.js"></script>
-<script>
-
-$(document).ready(function(){
-    $('.onoffswitch-checkbox').click(function(e){
-
-        var serial = $(this).attr('id');
-        var status = $(this).data('status');
-
-        if(status === 'true'){
-            $(this).data('status','false');
-        }
-        else{
-            $(this).data('status','true');
-        }
-        status = $(this).data('status');
-        dataObj={serial:serial, status:status};
-        console.log(dataObj);
-         $.ajax({url: '/GnomeAPI/changeGnome', data:dataObj, method: 'POST'})
-        .done(function(response) {
-            e.preventDefault();
-        });
-     });
-
-});
-
-</script>
 </body>
 </html>

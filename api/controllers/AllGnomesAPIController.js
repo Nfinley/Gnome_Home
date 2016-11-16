@@ -47,7 +47,7 @@ module.exports = {
             //Added gnome
             else{
               AllGnomesAPI.update({serial: serialNum}, {avaliable:false}).exec(function () {
-                return callback(null, {valid:true, message:'Gnome Added!'});
+                return callback(null, {valid:true, message:'Congrats Gnome Added!'});
               });
             }
               
