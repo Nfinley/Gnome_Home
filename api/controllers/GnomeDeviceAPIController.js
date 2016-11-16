@@ -73,11 +73,19 @@ module.exports = {
               console.log(result);
 
               var resultArr = [result[0]];
-              return response.view('dashboard', {gnomes:resultArr, title: 'Gnome @ Home -- Dashboard'});
+              return response.view('dashboard', {gnomes:resultArr, title: 'Gnome @ Home -- Dashboard', message:result.message});
               });
           }
         });
       }
+      else{
+            AddGnomeService.getAllGnomes(request.body.userid.trim(), function(err, result){
+              console.log(result);
+
+              var resultArr = [result[0]];
+              return response.view('dashboard', {gnomes:resultArr, title: 'Gnome @ Home -- Dashboard', message:result.message});
+              });
+          }
     });
   },
 

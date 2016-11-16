@@ -9,13 +9,13 @@ var Passwords = require('machinepack-passwords'); //Password encryption
 module.exports = {
 
     // User authentication function
-    authenticated: function(request, response) {
-        console.log('reached authenticate fn')
+    authenticated: function(request) {
+        console.log('reached authenticate fn');
         if(request.session.authenticated) {
             console.log('User ' + request.session.userId + ' is authenticated! Email address is: ' + request.session.email);
             return true;
         } else {
-            console.log('User is not authenticated!')
+            console.log('User is not authenticated!');
             return false;
         }
     },
@@ -53,7 +53,7 @@ module.exports = {
                   return console.log(error);
                 }
                 else {
-                  response.send("success");
+                  response.send('success');
                 }
               });
             }
@@ -63,9 +63,9 @@ module.exports = {
     //View all information about the user (from submitted email) including all devices
     viewUser: function (request, response) {
         if(this.authenticated(request, response)) {
-            console.log("reached viewUser function.  User is authenticated");
+            console.log('reached viewUser function.  User is authenticated');
         } else {
-            console.log("reached viewUser function.  User is not authenticated");
+            console.log('reached viewUser function.  User is not authenticated');
             return response.forbidden();
         }
         return GnomeUsersAPI.find({where: {email: request.session.email}}).populate('gnomes')
@@ -76,7 +76,7 @@ module.exports = {
             }
             else {
                 console.log(result);
-                return response.view('dashboard', {gnomes: result, title: 'Gnome @ Home -- Dashboard'});
+                return response.view('dashboard', {gnomes: result, title: 'Gnome @ Home -- Dashboard', message:''});
             }
         });
     },

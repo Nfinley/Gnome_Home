@@ -93,7 +93,7 @@ module.exports.routes = {
   },
 
   // Dashboard routes (user is only allowed if authenticated)
-  '/Dashboard':{
+  'GET /Dashboard':{
     controller: 'GnomeUsersAPI',
     action: 'viewUser'
   },
@@ -109,7 +109,7 @@ module.exports.routes = {
   },
 
   //Add device routes
-  '/Gnomes/addGnome':{
+  'POST /Dashboard':{
     controller :'GnomeDeviceAPI',
     action:'createGnome'
     // controller :'AllGnomesAPI',
