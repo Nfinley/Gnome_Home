@@ -12,7 +12,7 @@ const int ledPin =  14;
 const char* ssid     = "Fantabulous_G";  //local network
 const char* password = "adf1234567";
 const char* host = "192.168.0.101"; //development server
-const char* privateKey = "QAZ123";
+const char* privateKey = "ZXC123";
 
 int onOffStatus = 0;
 int ledState = LOW;
@@ -56,6 +56,17 @@ void loop() {
     //url += "?serial_id=";
     url += privateKey;
     url += '/';
+    
+String data = "alive=true";
+client.print(String("POST ") + url + " HTTP/1.1\r\n" +
+                 "Host: " + host + "\r\n" +
+                 //"Connection: close\r\n" +
+                 //"Content-Type: application/json\r\n" +
+                 "Content-Type: application/x-www-form-urlencoded\n"+
+                 "Content-Length: " + data.length() + "\r\n" +
+                 "\r\n" + // This is the extra CR+LF pair to signify the start of a body
+                 data + "\n");
+    
 
   // This will send the request to the server
   client.print(String("GET ") + url + " HTTP/1.1\r\n" +
@@ -89,5 +100,6 @@ void loop() {
 
   digitalWrite(ledPin, ledState);
   Serial.println(line);
+  
 }
 
