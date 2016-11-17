@@ -30,7 +30,7 @@ body, header {
 }
 
 header .header-content {
-    margin-top: 44px;
+    margin-top: -3em;
 }
 
 .image-wrapper {
@@ -131,6 +131,8 @@ a.nav-link {
 #topNav{
 
 }
+
+
 /* END OF BUTTON SWITCH */
 
 /* For the CLOUDS animated images */
