@@ -1,29 +1,45 @@
 $(document).ready(function(){
 
+    //Set button to already existing condition
+    $('.onoffswitch-checkbox').each(function(){
+        status = $(this).data('status'); 
+        name = $(this).attr('name');
+        if(status === 'true'){
+            $('#'+name+'Click').trigger('click');
+        }
+    });
+    
+    //Change button to new condition and send response to server
     $('.onoffswitch-checkbox').click(function(e){
 
-        var serial = $(this).attr('id');
-        var status = $(this).data('status');
+        //Store serial and status information into json
+        var dataObj={serial:$(this).attr('id'), status:$(this).data('status')};
 
-        if(status === 'true'){
+        //Set button to opposite boolean value
+        if(dataObj.status === 'true' || dataObj.status === true ){
             $(this).data('status','false');
         }
         else{
             $(this).data('status','true');
         }
-        status = $(this).data('status');
-        dataObj={serial:serial, status:status};
+        //Set new value into button
+        var status = $(this).data('status');
+        dataObj.status = status;
         console.log(dataObj);
+
+        //Send status to server
          $.ajax({url: '/GnomeAPI/changeGnome', data:dataObj, method: 'POST'})
         .done(function() {
             e.preventDefault();
         });
      });
 
+    //Show message when trying to add a device
     if($('#addMessage').html()!== ''){
 
         $('#ResultGnomeModal').modal('show');
     }
+
 });
 
 (function ($) {

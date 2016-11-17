@@ -9,10 +9,10 @@
 #include <ESP8266WiFi.h>
 
 const int ledPin =  14; 
-const char* ssid     = "NCC";  //local network
-const char* password = "";
-const char* host = "gnome-home.herokuapp.com"; //development server
-const char* privateKey = "ZXC123";
+const char* ssid     = "Fantabulous_G";  //local network
+const char* password = "adf1234567";
+const char* host = "192.168.0.101";//"gnome-home.herokuapp.com"; //development server
+const char* privateKey = "PLO123";
 
 int onOffStatus = 0;
 int ledState = LOW;
@@ -45,7 +45,7 @@ void loop() {
 
   // Use WiFiClient class to create TCP connections
   WiFiClient client;
-  const int httpPort = 80;
+  const int httpPort = 1337;
   if (!client.connect(host, httpPort)) {
     Serial.println("connection failed");
     return;
@@ -58,7 +58,7 @@ void loop() {
     url += '/';
     
 String PostData = "alive=true";
-  client.println("POST /GnomeAPI/getGnomeStatus/QAZ123 HTTP/1.1");
+  client.println("POST /GnomeAPI/getGnomeStatus/PLO123 HTTP/1.1");
   client.println("Host: gnome-home.herokuapp.com/");
   client.println("User-Agent: Arduino/1.0");
   client.println("Connection: close");

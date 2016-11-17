@@ -155,7 +155,8 @@
                                 <img class="card-img-top image-wrapper" src="../../images/gnome_hipster.png"
                                      alt="Card image cap">
                                 <div class="card-block">
-                                    <p class="card-text"><em>I love lamp.</em></p>
+                                    <p><em>I love lamp.</em></p>
+                                    <p>Serial # - <%= gnomes[0].gnomes[i].serial%></p>
                                     <!--on/off switch html-->
                                     <div class="text-center btn">
                                         <div class="onoffswitch">
@@ -163,7 +164,7 @@
                                                    id="<%= gnomes[0].gnomes[i].serial %>" data-status="<%= gnomes[0].gnomes[i].status %>">
 
                                             <label class="onoffswitch-label" for="<%= gnomes[0].gnomes[i].serial %>">
-                                                <span class="onoffswitch-inner"></span>
+                                                <span class="onoffswitch-inner" id="<%= gnomes[0].gnomes[i].serial%>Click"></span>
                                                 <span class="onoffswitch-switch"></span>
                                             </label>
                                         </div>
@@ -180,10 +181,10 @@
                                 <h4 class="card-title "></h4>
                                 <div class="card-block">
                                     <!--TODO: CARDS AUTO RESIZE AND WE NEED TO FIX THIS-->
-                                    <p class="card-text"><a class="nav-link page-scroll" data-toggle="modal"
+                                    <p ><a class="nav-link page-scroll" data-toggle="modal"
                                                             title="Add Gnome" href="#addGnomeModal"><i
                                                     class="fa fa-plus fa-5x" aria-hidden="true"></i></a></p>
-                                    <p class="card-text"><em><a class="nav-link page-scroll" data-toggle="modal"
+                                    <p ><em><a class="nav-link page-scroll" data-toggle="modal"
                                                                 title="Add Gnome" href="#addGnomeModal">Add Gnome</a></em></p>
                                     <!--on/off switch html-->
                                     <div class="text-center btn">
