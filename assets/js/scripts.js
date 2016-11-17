@@ -73,7 +73,7 @@ $(document).ready(function(){
     // Use backstretch plugin for responsive images
     $('#pic-about-us').backstretch("images/gnome_about_us.jpg");
 
-    $("#first").backstretch([
+    $(".index-carousel").backstretch([
         "images/italy.jpg",
         "images/matryoshka.jpg",
         "images/home.jpg"
