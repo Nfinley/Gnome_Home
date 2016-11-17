@@ -9,9 +9,9 @@
 #include <ESP8266WiFi.h>
 
 const int ledPin =  14; 
-const char* ssid     = "Fantabulous_G";  //local network
-const char* password = "adf1234567";
-const char* host = "192.168.0.101"; //development server
+const char* ssid     = "NCC";  //local network
+const char* password = "";
+const char* host = "gnome-home.herokuapp.com"; //development server
 const char* privateKey = "ZXC123";
 
 int onOffStatus = 0;
@@ -45,7 +45,7 @@ void loop() {
 
   // Use WiFiClient class to create TCP connections
   WiFiClient client;
-  const int httpPort = 1337;
+  const int httpPort = 80;
   if (!client.connect(host, httpPort)) {
     Serial.println("connection failed");
     return;
@@ -57,21 +57,16 @@ void loop() {
     url += privateKey;
     url += '/';
     
-String data = "alive=true";
-client.print(String("POST ") + url + " HTTP/1.1\r\n" +
-                 "Host: " + host + "\r\n" +
-                 //"Connection: close\r\n" +
-                 //"Content-Type: application/json\r\n" +
-                 "Content-Type: application/x-www-form-urlencoded\n"+
-                 "Content-Length: " + data.length() + "\r\n" +
-                 "\r\n" + // This is the extra CR+LF pair to signify the start of a body
-                 data + "\n");
-    
-
-  // This will send the request to the server
-  client.print(String("GET ") + url + " HTTP/1.1\r\n" +
-               "Host: " + host + "\r\n" + 
-               "Connection: close\r\n\r\n");
+String PostData = "alive=true";
+  client.println("POST /GnomeAPI/getGnomeStatus/QAZ123 HTTP/1.1");
+  client.println("Host: gnome-home.herokuapp.com/");
+  client.println("User-Agent: Arduino/1.0");
+  client.println("Connection: close");
+  client.println("Content-Type: application/x-www-form-urlencoded;");
+  client.print("Content-Length: ");
+  client.println(PostData.length());
+  client.println();
+  client.println(PostData);
   unsigned long timeout = millis();
   while (client.available() == 0) {
     if (millis() - timeout > 5000) {
@@ -80,13 +75,43 @@ client.print(String("POST ") + url + " HTTP/1.1\r\n" +
       return;
     }
   }
+  String line;
+  while(client.available()){
+    line = client.readStringUntil('\r');
+    line.trim();
+    Serial.println(line);
+  }
+  client.stop();
+  if (!client.connect(host, httpPort)) {
+    Serial.println("connection failed");
+    return;
+  }
+
   
-   String line;
+  delay(1000);
+
+  
+  // This will send the request to the server
+  client.print(String("GET ") + url + " HTTP/1.1\r\n" +
+               "Host: " + host + "\r\n" + 
+               "User-Agent: test\r\n"+
+               "Connection: close\r\n\r\n");
+  //unsigned long timeout = millis();
+  while (client.available() == 0) {
+    if (millis() - timeout > 5000) {
+      //Serial.println(">>> Client Timeout !");
+      client.stop();
+      return;
+    }
+  }
+  
+   //String line;
 
   // Read all the lines of the reply from server and print them to Serial
   while(client.available()){
     line = client.readStringUntil('\r');
     line.trim();
+    Serial.println(line);
   }
 
   if(line.equals("true")){
@@ -99,7 +124,7 @@ client.print(String("POST ") + url + " HTTP/1.1\r\n" +
   }
 
   digitalWrite(ledPin, ledState);
-  Serial.println(line);
+  //Serial.println(host+url);
   
 }
 
