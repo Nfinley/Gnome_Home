@@ -1,18 +1,18 @@
 /* Dashboard CSS */
 
 body, header {
-    background-image: url('../images/seigaiha.png');
+    background-image: url('../images/swirl_pattern.png');
 }
 
 /* Side slider */
 #slider {
-    background-color: #BDBDBD;
+    background-color: #eee;
     z-index: 9999999;
     /* Match the height of the nav bar */
     margin-top: 70px;
 }
 #slider h3 {
-    background-color: #2E2E2E;
+    background-color: #ED6A5A;
     color: #fff;
     font-size: 1.2em;
     padding: 15px;
@@ -20,12 +20,13 @@ body, header {
     font-weight: 300;
 }
 #slider a {
-    border-bottom: 1px solid #D8D8D8;
+    border-bottom: 1px solid #fff;
     padding: 1em;
     display: block;
     font-size: 1.4em;
     font-weight: 300;
     text-decoration: none;
+    color: #363336;
 }
 
 header .header-content {
@@ -125,6 +126,10 @@ a.nav-link {
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
     right: 0px;
+}
+
+#topNav{
+
 }
 /* END OF BUTTON SWITCH */
 
