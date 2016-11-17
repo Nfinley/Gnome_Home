@@ -9,11 +9,11 @@ module.exports = {
 
   attributes: {
     //Serial # of device
-  	serial:{
-  		type:'string',
-  		size:'128',
-  		required: true
-  	},
+    serial:{
+    type:'string',
+    size:'128',
+    required: true
+    },
 
     //Nickname of device
     nickname:{
@@ -26,6 +26,10 @@ module.exports = {
     status:{
       type:'boolean',
       required: true
+    },
+
+    alive:{
+      type:'boolean'
     },
 
     //Owner (user) of device

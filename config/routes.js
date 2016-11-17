@@ -71,9 +71,13 @@ module.exports.routes = {
   },*/
 
   //Gnome device routes
-  '/GnomeAPI/getGnomeStatus/:serial': {
+  'GET /GnomeAPI/getGnomeStatus/:serial': {
     controller : 'GnomeDeviceAPI',
     action: 'getGnomeStatus'
+  },
+  'POST /GnomeAPI/getGnomeStatus/:serial': {
+    controller : 'GnomeDeviceAPI',
+    action: 'IsGnomeAlive'
   },
   '/GnomeAPI/changeGnome': {
     controller : 'GnomeDeviceAPI',

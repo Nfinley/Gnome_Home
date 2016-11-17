@@ -9,11 +9,9 @@ module.exports = {
 
   //Takes in the serial number and returns its status (ie. On or Off)
   //Used by gnome devices
-	getGnomeStatus: function (request, response) {
-
+  getGnomeStatus: function (request, response) {
     //console.log(request.params.serial);
     return GnomeDeviceAPI.findOne({serial:request.params.serial}).exec(function (error, result) {
-      
       if(error){
 
         //TODO error handling
@@ -30,6 +28,24 @@ module.exports = {
         return response.send(result.status);
       }
     });
+  },
+
+  IsGnomeAlive: function(request, response){
+
+    // console.log(request.params.serial, request.body);
+    return GnomeDeviceAPI.update({serial:request.params.serial}, {alive:true}).exec(function (error) {
+
+      if(error){
+
+        //TODO error handling
+        return console.log(error);
+      }
+
+      else{
+        return response.send('Alive recorded');
+      }
+    });
+
   },
 
   //Takes in the serial number and changes its status (ie. On or Off)
