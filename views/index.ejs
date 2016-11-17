@@ -46,34 +46,13 @@
     </div>
 </div>
 
-<!-- Splash Page. Note: Backstretch plugin used here for rotating background images -->
-
-<header id="first">
-    <div class="header-content" id="splash">
-        <div class="inner">
-            <br>
-            <h1>Gnome @ Home</h1>
-            <br>
-            <h5 class="wow fadeIn text-normal wow fadeIn">You always have a Gnome at home no matter where you
-                roam!</h5>
-            <br>
-            <a href="#register" class="btn btn-primary-outline btn-xl page-scroll wow fadeInUp m-t-3">Register</a>
-            <br>
-            <br>
-        </div>
-    </div>
-</header>
-
 <!-- Nav Bar -->
+
 <div class="container-fluid">
     <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
 
-        <button class="navbar-toggler hidden-md-up float-xs-right" type="button" data-toggle="collapse"
-                data-target="#collapsingNavbar">
-            ☰
-        </button>
-        <a class="navbar-brand page-scroll" href="#first"><img src="/images/MiLeKbMia.png" height="40" width="auto">
-            Gnome @ Home</a>
+        <button class="navbar-toggler hidden-md-up float-xs-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar"> ☰ </button>
+        <a class="navbar-brand page-scroll" href="#first"><img src="/images/MiLeKbMia.png" height="40" width="auto">Gnome @ Home</a>
         <div class="collapse navbar-toggleable-sm" id="collapsingNavbar">
             <ul class="nav navbar-nav float-xs-right">
                 <li class="nav-item">
@@ -86,14 +65,29 @@
                     <a class="nav-link page-scroll" href="#last">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" data-toggle="modal" title="Sign In Modal" href="#signinModal">Log
-                        In</a>
+                    <a class="nav-link page-scroll" data-toggle="modal" title="Sign In Modal" href="#signinModal">LogIn</a>
                 </li>
             </ul>
         </div>
-
     </nav>
 </div>
+
+<!-- Splash Page. Note: Backstretch plugin used here for rotating background images -->
+
+<header id="first">
+    <div class="header-content" id="splash">
+        <div class="inner">
+            <br>
+            <h1>Gnome @ Home</h1>
+            <br>
+            <h5 class="wow fadeIn text-normal wow fadeIn">You always have a Gnome at home no matter where you roam!</h5>
+            <br>
+            <a href="#register" class="btn btn-primary-outline btn-xl page-scroll wow fadeInUp m-t-3">Register</a>
+            <br>
+            <br>
+        </div>
+    </div>
+</header>
 
 <!-- Our Gnomes -->
 
@@ -121,8 +115,7 @@
                      src="images/thermostat.jpg" alt="Card image cap">
                 <div class="card-block">
                     <h4 class="card-title">Thermostats</h4>
-                    <p class="card-text">Who wants to get out of the warm covers to change the thermostat. Let our
-                        gnomes take care of it.</p>
+                    <p class="card-text">Who wants to get out of the warm covers to change the thermostat. Let our gnomes take care of it.</p>
                 </div>
             </div>
             <!-- card -->
@@ -131,9 +124,7 @@
                      src="images/garage.jpg" alt="Card image cap">
                 <div class="card-block">
                     <h4 class="card-title">Garage Door Openers</h4>
-                    <p class="card-text">Open the garage door from anywhere. You can always let someone in with the help
-                        of our gnomes.</p>
-
+                    <p class="card-text">Open the garage door from anywhere. You can always let someone in with the help of our gnomes.</p>
                 </div>
             </div>
         </div>
@@ -156,8 +147,7 @@
                         <!--EMAIL ADDRESS-->
                         <div class="col-md-6">
                             <label for="emailAddress"></label>
-                            <input id="reg-email" name="email" value="" type="email" class="form-control pull-left"
-                                   aria-describedby="emailHelp" placeholder="Enter email">
+                            <input id="reg-email" name="email" value="" type="email" class="form-control pull-left"  aria-describedby="emailHelp" placeholder="Enter email">
                             <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
                         </div>
                     </div>
@@ -166,8 +156,7 @@
                     <div class="form-group">
                         <div class="col-md-6">
                             <label for="userPassword"></label>
-                            <input id="reg-password" name="password" value="" type="password" class="form-control"
-                                   id="userPassword" placeholder="Password">
+                            <input id="reg-password" name="password" value="" type="password" class="form-control" placeholder="Password">
                         </div>
                     </div>
 
@@ -175,8 +164,7 @@
                     <div class="form-group">
                         <div class="col-md-4">
                             <label for="firstName"></label>
-                            <input id="reg-fname" name="firstname" value="" type="text" class="form-control"
-                                   id="firstName" placeholder="First Name">
+                            <input id="reg-fname" name="firstname" value="" type="text" class="form-control" placeholder="First Name">
                         </div>
                     </div>
 
@@ -184,8 +172,7 @@
                     <div class="form-group">
                         <div class="col-md-4">
                             <label for="lastName"></label>
-                            <input id="reg-lname" name="lastname" value="" type="text" class="form-control"
-                                   id="lastName" placeholder="Last Name">
+                            <input id="reg-lname" name="lastname" value="" type="text" class="form-control" placeholder="Last Name">
                         </div>
                     </div>
 
@@ -193,51 +180,42 @@
                     <div class="form-group">
                         <div class="col-md-4">
                             <label for="enterZip"></label>
-                            <input id="reg-zipcode" name="zipcode" value="" type="text" class="form-control"
-                                   id="enterZip" placeholder="Zip Code">
+                            <input id="reg-zipcode" name="zipcode" value="" type="text" class="form-control" placeholder="Zip Code">
                         </div>
                     </div>
 
                     <!-- Submit Button -->
                     <div class="col-md-4 offset-md-4">
                         <label></label>
-                        <button type="submit" id="register-btn" class="btn btn-primary btn-block btn-lg"> Register
-                        </button>
+                        <button type="submit" id="register-btn" class="btn btn-primary btn-block btn-lg"> Register</button>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
 </section>
 
-<!-- About Us -->
+<!-- About Us. Note: Backstretch plugin is used to populate the About Us pic in div#pic-about-us -->
 
 <section id="two">
-    <div class="container">
+    <div class="container-">
         <div class="row">
-            <div class="col-lg-12 text-xs-center">
+            <div class="col-xs-12 text-xs-center">
                 <h2 class="m-t-0 text-primary">About Us</h2>
                 <hr class="primary">
             </div>
         </div>
-    </div>
-    <div class="container wow fadeInUp">
+        <div id="pic-about-us" style="height: 490px;"></div>
+        <br>
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-xs-12">
                 <div class="feature">
-                    <img class="img-fluid" src="images/gnome_about_us.jpg" id="aboutUs">
-
-                    <br>
-                    <br>
                     <h6 class="text-uppercase text-xs-center">
                         <a href="https://github.com/trooperandz" title="Github">Matt Holland</a> -
                         <a href="https://github.com/Nfinley" title="Github"> Nigel Finley </a> -
                         <a href="https://github.com/christin3" title="Github"> Christine Baba </a> -
                         <a href="https://github.com/emsaidi" title="Github"> Saidi Granados </a> -
                         <a href="https://github.com/CPUhobbes" title="Github"> Eric Steinberg </a>
-
-
                     </h6>
                 </div>
             </div>
@@ -246,6 +224,7 @@
 </section>
 
 <!-- Contact Us-->
+
 <section id="last" class="bg-alt">
     <div class="container">
         <div class="row">
@@ -271,8 +250,8 @@
                     </div>
                     <div class="col-md-4 offset-md-4">
                         <label></label>
-                        <button id="submitEmail" type="button" data-toggle="modal" data-target="#alertModal"
-                                class="btn btn-primary btn-block btn-lg">Send <i class="ion-android-arrow-forward"></i>
+                        <button id="submitEmail" type="button" data-toggle="modal" data-target="#alertModal" class="btn btn-primary btn-block btn-lg">Send
+                            <i class="ion-android-arrow-forward"></i>
                         </button>
                     </div>
                 </form>
@@ -281,37 +260,18 @@
     </div>
 </section>
 
-
 <!-- Footer -->
 
 <footer id="footer">
     <div class="container">
         <div class="row">
-
-            <!--for future integration-->
-            <!--<div class="col-xs-6 col-sm-3 text-xs-left">-->
-            <!--<h6 class="text-uppercase">About</h6>-->
-            <!--<ul class="list-unstyled">-->
-            <!--<li><a href="#">Contact Us</a></li>-->
-            <!--<li><a href="#">Delivery Information</a></li>-->
-            <!--<li><a href="#">Privacy Policy</a></li>-->
-            <!--<li><a href="#">Terms &amp; Conditions</a></li>-->
-            <!--</ul>-->
-            <!--</div>-->
-
             <div align="center">
                 <h6 class="text-uppercase">Follow Us!</h6>
-
-                <a href="https://github.com/Nfinley/Gnome_Home" title="Github"><i
-                            class="icon-lg ion-social-github-outline"></i></a>
+                <a href="https://github.com/Nfinley/Gnome_Home" title="Github"><i class="icon-lg ion-social-github-outline"></i></a>
                 <br><br>
                 <span class="text-muted small"><a href="">Gnome@Home</a> <br>©2016</span>
-
             </div>
         </div>
-        <br>
-
-    </div>
     </div>
 </footer>
 
