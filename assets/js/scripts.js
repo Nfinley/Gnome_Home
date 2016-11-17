@@ -19,7 +19,7 @@ $(document).ready(function(){
             e.preventDefault();
         });
      });
-    
+
     if($('#addMessage').html()!== ''){
 
         $('#ResultGnomeModal').modal('show');
@@ -68,6 +68,18 @@ $(document).ready(function(){
         push: false,
         overlay: false,
         position: 'right'
+    });
+
+    // Use backstretch plugin for responsive images
+    //$('.pic-about-us').backstretch("images/gnome_about_us.jpg");
+
+    $("#first").backstretch([
+        "images/italy.jpg",
+        "images/matryoshka.jpg",
+        "images/home.jpg"
+    ], {
+        fade: 4000,
+        duration: 6000
     });
 
     // Login modal form on index page
