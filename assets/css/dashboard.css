@@ -2,6 +2,7 @@
 
 body, header {
     background-image: url('../images/swirl_pattern.png');
+    padding-top: 100px;
 }
 
 /* Side slider */
@@ -128,9 +129,17 @@ a.nav-link {
     right: 0px;
 }
 
-#topNav{
+.row{
+    margin: 5px 5px 5px 5px ;
+
 
 }
+
+#footer{
+    padding: 0 0 0 0;
+}
+
+
 
 
 /* END OF BUTTON SWITCH */
