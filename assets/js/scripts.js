@@ -1,5 +1,23 @@
 $(document).ready(function(){
 
+    $('.statusButton').each(function(){
+        var deviceTime = $(this).data('time');
+        var currentTime = new Date();
+
+        var difference = Math.abs(Date.parse(currentTime)-Date.parse(deviceTime));
+
+        if(difference>60000){
+            $(this).addClass('btn-danger');
+            $(this).html("OFFLINE");
+            console.log("offline");
+        }
+        else{
+            $(this).addClass('btn-success');
+            $(this).html("ONLINE");
+            console.log("online");
+        }
+    });
+
     //Set button to already existing condition
     $('.onoffswitch-checkbox').each(function(){
         status = $(this).data('status'); 
