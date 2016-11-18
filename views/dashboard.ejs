@@ -1,3 +1,4 @@
+<head>
 <meta name="description" content="You always have a Gnome at home no matter where you roam!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Codeply">
@@ -23,7 +24,7 @@
     <script src="https://use.fontawesome.com/9763ef17ba.js"></script>
 
 </head>
-
+<html>
 <body class="bg-faded">
 
 <!--======== MODALS ========= -->
@@ -131,7 +132,7 @@
                 data-target="#collapsingNavbar">
             ☰
         </button>
-        <a class="navbar-brand page-scroll" href="#first"><img src="/images/MiLeKbMia.png" height="40" width="auto">
+        <a class="navbar-brand page-scroll" href="/"><img src="/images/MiLeKbMia.png" height="40" width="auto">
             Gnome @ Home</a>
         <div class="collapse navbar-toggleable-sm" id="collapsingNavbar">
             <ul class="nav navbar-nav float-xs-right">
@@ -170,7 +171,6 @@
                 <div class="card-deck">
                     <div class="row">
                         <% for(var i = 0; i < gnomes[0].gnomes.length; i++) { %>
-
                         <div class="col-xs-12 col-sm-6 col-md-4">
                             <div class="card">
                                 <h4 class="card-title "><%= gnomes[0].gnomes[i].nickname %></h4>
@@ -184,7 +184,6 @@
                                         <div class="onoffswitch">
                                             <input type="checkbox" name="<%= gnomes[0].gnomes[i].serial %>" class="onoffswitch-checkbox"
                                                    id="<%= gnomes[0].gnomes[i].serial %>" data-status="<%= gnomes[0].gnomes[i].status %>">
-
                                             <label class="onoffswitch-label" for="<%= gnomes[0].gnomes[i].serial %>">
                                                 <span class="onoffswitch-inner" id="<%= gnomes[0].gnomes[i].serial%>Click"></span>
                                                 <span class="onoffswitch-switch"></span>
@@ -196,7 +195,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <% } %>
 
                         <!--card 3-->
@@ -225,14 +223,16 @@
 
 <footer id="footer">
     <div class="container">
-        <div class="row">
-            <div align="center">
-                <h6 class="text-uppercase">Follow Us!</h6>
-                <a href="https://github.com/Nfinley/Gnome_Home" title="Github"><i class="icon-lg ion-social-github-outline"></i></a>
-                <br><br>
-                <span class="text-muted small"><a href="">Gnome@Home</a> <br>©2016</span>
-            </div>
+
+        <div align="center">
+            <br>
+            <h6 class="text-uppercase" id="followUs">Follow Us!</h6>
+            <a href="https://github.com/Nfinley/Gnome_Home" title="Github"><i
+                        class="icon-lg ion-social-github-outline"></i></a>
+            <br>
+            <span class="text-muted small"><a href="">Gnome@Home</a> <br>©2016</span>
         </div>
+
     </div>
 </footer>
 
