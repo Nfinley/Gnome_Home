@@ -1,58 +1,31 @@
+<head>
 <meta name="description" content="You always have a Gnome at home no matter where you roam!">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Codeply">
-<!-- Bootstrap 4 Alpha -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
-      integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Codeply">
+    <!-- Bootstrap 4 Alpha -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css"
+          integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
 
-<!-- Animate CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
-<!-- Ionicons CSS -->
-<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-<!-- Bootstrap 4 Alpha  Script-->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
-        integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK"
-        crossorigin="anonymous"></script>
+    <!-- Ionicons CSS -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Bootstrap 4 Alpha  Script-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
+            integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK"
+            crossorigin="anonymous"></script>
 
-<!-- Custom Stylesheets -->
-<link rel="stylesheet" href="../../css/styles.css">
-<link rel="stylesheet" href="../../css/dashboard.css">
+    <!-- Custom Stylesheets -->
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
 
-<!-- Font Awesome script-->
-<script src="https://use.fontawesome.com/9763ef17ba.js"></script>
+    <!-- Font Awesome script-->
+    <script src="https://use.fontawesome.com/9763ef17ba.js"></script>
 
 </head>
-<!--nav bar and logo-->
-
-<div class="container-fluid">
-
-    <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
-
-        <button class="navbar-toggler hidden-md-up float-right" type="button" data-toggle="collapse"
-                data-target="#collapsingNavbar">
-            ☰
-        </button>
-        <a class="navbar-brand page-scroll" href="/"><img src="/images/MiLeKbMia.png" height="40" width="auto">
-            Gnome @ Home</a>
-        <div class="collapse navbar-toggleable-sm" id="collapsingNavbar">
-            <ul class="nav navbar-nav float-xs-right">
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" data-toggle="modal" title="A free Bootstrap theme"
-                       href="#aboutModal">Hi, <%= gnomes[0].firstname %></a>
-                </li>
-                <li class="nav-item">
-                    <!--Gear ICON Collabsible nav bar-->
-                    <a class="nav-link page-scroll" id="trigger" title="Edit Settings"
-                       href="#settingsModal"><i class="fa fa-cog fa-lg fa-spin fa-fw" aria-hidden="true"></i></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-</div>
-<!--nav bar and logo-->
-
+<html>
+<body class="bg-faded">
 
 <!--======== MODALS ========= -->
 <div id="galleryModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
@@ -117,7 +90,7 @@
                             <input class="form-control" type="text" name="userID" value="" id="User ID">
                         </div>
                     </div> -->
-                    <input type="hidden" name="userid" value="<%= gnomes[0].id %>">
+                     <input type="hidden" name="userid" value="<%= gnomes[0].id %>">
 
                     <!--Serial #: <input type="text" name="serial" value=""><br>-->
                     <!--UserID: <input type="text" name="userID" value=""><br>-->
@@ -125,7 +98,7 @@
                     <div class="form-group row">
                         <div class="col-xs-8">
                             <input type="submit" value="ADD!" class="btn btn-primary btn-lg pull-right"
-                                   aria-hidden="true"></input>
+                                aria-hidden="true"></input>
                         </div>
                     </div>
 
@@ -134,6 +107,7 @@
         </div>
     </div>
 </div>
+
 
 
 <div id="ResultGnomeModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
@@ -151,7 +125,32 @@
 
 
 
+<div class="container-fluid">
+    <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
 
+        <button class="navbar-toggler hidden-md-up float-right" type="button" data-toggle="collapse"
+                data-target="#collapsingNavbar">
+            ☰
+        </button>
+        <a class="navbar-brand page-scroll" href="/"><img src="/images/MiLeKbMia.png" height="40" width="auto">
+            Gnome @ Home</a>
+        <div class="collapse navbar-toggleable-sm" id="collapsingNavbar">
+            <ul class="nav navbar-nav float-xs-right">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" data-toggle="modal" title="A free Bootstrap theme"
+                       href="#aboutModal">Hi, <%= gnomes[0].firstname %></a>
+                </li>
+                <li class="nav-item">
+                    <!--Gear ICON Collabsible nav bar-->
+                    <a class="nav-link page-scroll" id="trigger" title="Edit Settings"
+                       href="#settingsModal"><i class="fa fa-cog fa-lg fa-spin fa-fw" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<header id="first">
     <div id="slider">
         <h3> Gnome @ Home </h3>
         <a href="#"> Account </a>
@@ -160,19 +159,18 @@
     </div>
 
 
-<body>
-
+    <div class="header-content" id="">
+        <div class="inner">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
-                    <h2 align="center"> Gnome Control </h2>
+                    <h2> Gnome Control </h2>
                     <hr class="primary">
                 </div>
             </div>
             <div class="card-deck-wrapper">
-                <div class="card-deck" align="center">
+                <div class="card-deck">
                     <div class="row">
                         <% for(var i = 0; i < gnomes[0].gnomes.length; i++) { %>
-
                         <div class="col-xs-12 col-sm-6 col-md-4">
                             <div class="card">
                                 <h4 class="card-title "><%= gnomes[0].gnomes[i].nickname %></h4>
@@ -180,29 +178,23 @@
                                      alt="Card image cap">
                                 <div class="card-block">
                                     <p><em>I love lamp.</em></p>
-                                    <p>Serial # - <%= gnomes[0].gnomes[i].serial %></p>
+                                    <p>Serial # - <%= gnomes[0].gnomes[i].serial%></p>
                                     <!--on/off switch html-->
                                     <div class="text-center btn">
                                         <div class="onoffswitch">
-                                            <input type="checkbox" name="<%= gnomes[0].gnomes[i].serial %>"
-                                                   class="onoffswitch-checkbox"
-                                                   id="<%= gnomes[0].gnomes[i].serial %>"
-                                                   data-status="<%= gnomes[0].gnomes[i].status %>">
-
+                                            <input type="checkbox" name="<%= gnomes[0].gnomes[i].serial %>" class="onoffswitch-checkbox"
+                                                   id="<%= gnomes[0].gnomes[i].serial %>" data-status="<%= gnomes[0].gnomes[i].status %>">
                                             <label class="onoffswitch-label" for="<%= gnomes[0].gnomes[i].serial %>">
-                                                <span class="onoffswitch-inner"
-                                                      id="<%= gnomes[0].gnomes[i].serial %>Click"></span>
+                                                <span class="onoffswitch-inner" id="<%= gnomes[0].gnomes[i].serial%>Click"></span>
                                                 <span class="onoffswitch-switch"></span>
                                             </label>
                                         </div>
                                     </div>
-                                    <div><a href="#" class="btn btn-lg disabled statusButton" role="button"
-                                            aria-disabled="true" id="<%= gnomes[0].gnomes[i].serial %>Status"
-                                            data-time="<%= gnomes[0].gnomes[i].updatedAt %>"></a></div>
+                                    <div><a href="#" class="btn btn-lg disabled statusButton" role="button" aria-disabled="true" id="<%= gnomes[0].gnomes[i].serial%>Status"
+                                    data-time="<%= gnomes[0].gnomes[i].updatedAt %>"></a></div>
                                 </div>
                             </div>
                         </div>
-
                         <% } %>
 
                         <!--card 3-->
@@ -211,11 +203,11 @@
                                 <h4 class="card-title "></h4>
                                 <div class="card-block">
                                     <!--TODO: CARDS AUTO RESIZE AND WE NEED TO FIX THIS-->
-                                    <p><a class="nav-link page-scroll" data-toggle="modal"
-                                          title="Add Gnome" href="#addGnomeModal"><i
+                                    <p ><a class="nav-link page-scroll" data-toggle="modal"
+                                                            title="Add Gnome" href="#addGnomeModal"><i
                                                     class="fa fa-plus fa-5x" aria-hidden="true"></i></a></p>
-                                    <p><em><a class="nav-link page-scroll" data-toggle="modal"
-                                              title="Add Gnome" href="#addGnomeModal">Add Gnome</a></em></p>
+                                    <p ><em><a class="nav-link page-scroll" data-toggle="modal"
+                                                                title="Add Gnome" href="#addGnomeModal">Add Gnome</a></em></p>
                                     <!--on/off switch html-->
                                     <div class="text-center btn">
                                     </div>
@@ -225,28 +217,24 @@
                     </div>
                 </div>
             </div>
-
-
-
-
+        </div>
+    </div>
+</header>
 
 <footer id="footer">
     <div class="container">
-        <div class="row">
-            <div align="center">
-                <br>
-                <h6 class="text-uppercase">Follow Us!</h6>
 
-                <a href="https://github.com/Nfinley/Gnome_Home" title="Github"><i
-                            class="icon-lg ion-social-github-outline"></i></a>
-                <br>
-                <span class="text-muted small"><a href="">Gnome@Home</a>
-                    <br>©2016</span>
-            </div>
+        <div align="center">
+            <br>
+            <h6 class="text-uppercase" id="followUs">Follow Us!</h6>
+            <a href="https://github.com/Nfinley/Gnome_Home" title="Github"><i
+                        class="icon-lg ion-social-github-outline"></i></a>
+            <br>
+            <span class="text-muted small"><a href="">Gnome@Home</a> <br>©2016</span>
         </div>
+
     </div>
 </footer>
-</body>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>

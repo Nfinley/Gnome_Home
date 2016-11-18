@@ -106,7 +106,7 @@ aside {
     padding: 45px 0;
 }
 
-#footer{
+#footer {
     padding: 0 0 0 0;
 }
 
@@ -364,4 +364,8 @@ img::-moz-selection {
 
 .card-text {
     text-align: justify;
+}
+
+#followUs {
+    color: #ed6a5a;
 }
