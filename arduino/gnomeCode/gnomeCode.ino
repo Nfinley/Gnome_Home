@@ -11,7 +11,7 @@
 const int ledPin =  14; 
 const char* ssid     = "Fantabulous_G";  //local network
 const char* password = "adf1234567";
-const char* host = "192.168.0.101";//"gnome-home.herokuapp.com"; //development server
+const char* host = "gnome-home.herokuapp.com"; //development server
 const char* privateKey = "PLO123";
 
 int onOffStatus = 0;
@@ -45,7 +45,7 @@ void loop() {
 
   // Use WiFiClient class to create TCP connections
   WiFiClient client;
-  const int httpPort = 1337;
+  const int httpPort = 80;
   if (!client.connect(host, httpPort)) {
     Serial.println("connection failed");
     return;
