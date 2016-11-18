@@ -23,7 +23,35 @@
 <script src="https://use.fontawesome.com/9763ef17ba.js"></script>
 
 </head>
+<!--nav bar and logo-->
 
+<div class="container-fluid">
+
+    <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
+
+        <button class="navbar-toggler hidden-md-up float-right" type="button" data-toggle="collapse"
+                data-target="#collapsingNavbar">
+            ☰
+        </button>
+        <a class="navbar-brand page-scroll" href="/"><img src="/images/MiLeKbMia.png" height="40" width="auto">
+            Gnome @ Home</a>
+        <div class="collapse navbar-toggleable-sm" id="collapsingNavbar">
+            <ul class="nav navbar-nav float-xs-right">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" data-toggle="modal" title="A free Bootstrap theme"
+                       href="#aboutModal">Hi, <%= gnomes[0].firstname %></a>
+                </li>
+                <li class="nav-item">
+                    <!--Gear ICON Collabsible nav bar-->
+                    <a class="nav-link page-scroll" id="trigger" title="Edit Settings"
+                       href="#settingsModal"><i class="fa fa-cog fa-lg fa-spin fa-fw" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+</div>
+<!--nav bar and logo-->
 
 
 <!--======== MODALS ========= -->
@@ -121,32 +149,7 @@
     </div>
 </div>
 
-<div class="container-fluid">
 
-    <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
-
-        <button class="navbar-toggler hidden-md-up float-right" type="button" data-toggle="collapse"
-                data-target="#collapsingNavbar">
-            ☰
-        </button>
-        <a class="navbar-brand page-scroll" href="#first"><img src="/images/MiLeKbMia.png" height="40" width="auto">
-            Gnome @ Home</a>
-        <div class="collapse navbar-toggleable-sm" id="collapsingNavbar">
-            <ul class="nav navbar-nav float-xs-right">
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" data-toggle="modal" title="A free Bootstrap theme"
-                       href="#aboutModal">Hi, <%= gnomes[0].firstname %></a>
-                </li>
-                <li class="nav-item">
-                    <!--Gear ICON Collabsible nav bar-->
-                    <a class="nav-link page-scroll" id="trigger" title="Edit Settings"
-                       href="#settingsModal"><i class="fa fa-cog fa-lg fa-spin fa-fw" aria-hidden="true"></i></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-</div>
 
 
     <div id="slider">
