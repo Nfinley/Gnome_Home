@@ -5,6 +5,10 @@ body, header {
 
 }
 
+#topNav {
+    margin: 0em -1em;
+}
+
 /* Side slider */
 #slider {
     background-color: #eee;
@@ -16,6 +20,7 @@ body, header {
     background-color: #ED6A5A;
     color: #fff;
     font-size: 1.2em;
+    padding: 15px;
     padding: 15px;
     margin: 0;
     font-weight: 300;
@@ -30,8 +35,14 @@ body, header {
     color: #363336;
 }
 
-header .header-content {
-    margin-top: -3em;
+
+#first{
+    margin-top: 0px;
+    position: relative;
+    text-align: center;
+    color: #001A33 ;
+    width: 100%;
+    background-color: #fff;
 }
 
 .image-wrapper {

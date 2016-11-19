@@ -20,13 +20,13 @@ $(document).ready(function(){
 
     //Set button to already existing condition
     $('.onoffswitch-checkbox').each(function(){
-        status = $(this).data('status'); 
+        status = $(this).data('status');
         name = $(this).attr('name');
         if(status === 'true'){
             $('#'+name+'Click').trigger('click');
         }
     });
-    
+
     //Change button to new condition and send response to server
     $('.onoffswitch-checkbox').click(function(e){
 
