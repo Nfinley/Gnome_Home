@@ -42,11 +42,11 @@ describe('Gnome @ Home webpage is active ', function () {
 });
 
 //tests to see if the login page works with both a valid email and non-valid email
-describe('Test the login modal on Gnome@Home index page ', function () {
+describe('Test the login modal on Gnome@Home index page', function () {
     this.timeout(100000);
 
 
-    it('should login into dashboard page using sample user', function () {
+    it('should login into dashboard page using sample user and then logout', function () {
 
 
         return Nightmare({show: true})
@@ -60,44 +60,70 @@ describe('Test the login modal on Gnome@Home index page ', function () {
             .wait(7000)
             //takes a screensht of the current page
             .screenshot('./assets/images/testpage.png', {
-                x: 20,
-                y: 10,
+                x: 10,
+                y: 5,
                 width: 1000,
-                height: 1000
-            });
+                height: 750
+            })
+            .click('.fa-cog')
+            .wait(3000)
+            .click('a[href*="/logoutUser"]');
+
 
 
     });
-    it('should fail when logging in with bad credentials', function () {
+
+
+    it('should fail when logging in with incorrect email credentials', function () {
 
         return Nightmare({show: true})
             .goto('https://gnome-home.herokuapp.com//')
             .wait(1000)
             .click('a[href*="#signinModal"]')
             .wait(1000)
-            .type('form[action*="/loginUser"] [name=email]', 'testme.test.com')
+            .type('form[action*="/loginUser"] [name=email]', 'badcrentials.test.com')
             .type('form[action*="/loginUser"] [name=password]', '1234')
             .click('form[action*="/loginUser"] [type=submit]')
-
-            .screenshot('./assets/images/faillogin.png', {
-                x: 20,
-                y: 10,
+            .wait(3000)
+            //takes a screensht of the current page
+            .screenshot('./assets/images/testpage-badlogin.png', {
+                x: 10,
+                y: 5,
                 width: 1000,
-                height: 1000
+                height: 750
             });
     });
+
 });
 
+// /tests the contacts us section to see if it succesfully sends an email
+describe('Test the contact us section of the webpage', function () {
+    this.timeout(100000);
 
-// describe('homepage', function(){
-//     it('should respond to GET',function(done){
-//         superagent
-//             .get('http://localhost:'+port)
-//             .end(function(res){
-//                 expect(res.status).to.equal(200);
-//                 done();
-//             })
-//     })
+
+    it('should successfully send a message to Gnome @ Home', function () {
+
+
+        return Nightmare({show: true})
+            .goto('https://gnome-home.herokuapp.com//')
+            .wait(2000)
+            .click('a[href*="#last"]')
+            .wait(2000)
+            .type('form[id*="emailForm"] [id=name]', 'Automated Nightmare Bot')
+            .type('form[id*="emailForm"] [id=email]', 'gnomebot@test.com')
+            .type('form[id*="emailForm"] [id=message]', 'This is an email generated from an automated  Nightmare test')
+
+            .click('form[id*="emailForm"] [type=button]')
+            .wait(5000)
+            .screenshot('./assets/images/emailsentsuccess.png', {
+                x: 10,
+                y: 5,
+                width: 1000,
+                height: 750
+            });
+    });
+
+});
 
 
 
