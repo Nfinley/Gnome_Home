@@ -171,6 +171,7 @@
                     <hr class="primary">
                 </div>
             </div>
+            <div class="row">
             <div class="card-deck-wrapper">
                 <div class="card-deck">
                     <div class="row">
@@ -181,8 +182,8 @@
                                 <img class="card-img-top image-wrapper" src="../../images/gnome_hipster.png"
                                      alt="Card image cap">
                                 <div class="card-block">
-                                    <p><em>I love lamp.</em></p>
-                                    <p>Serial # - <%= gnomes[0].gnomes[i].serial%></p>
+                                    <p><em>I love lamp.</em><br>
+                                    Device ID: <%= gnomes[0].gnomes[i].serial%></p>
                                     <!--on/off switch html-->
                                     <div class="text-center btn">
                                         <div class="onoffswitch">
@@ -221,6 +222,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 </header>
