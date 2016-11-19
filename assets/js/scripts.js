@@ -20,15 +20,16 @@ $(document).ready(function(){
 
     //Set button to already existing condition
     $('.onoffswitch-checkbox').each(function(){
-        status = $(this).data('status'); 
+        status = $(this).data('status');
         name = $(this).attr('name');
         if(status === 'true'){
             $('#'+name+'Click').trigger('click');
         }
     });
-    
+
     //Change button to new condition and send response to server
     $('.onoffswitch-checkbox').click(function(e){
+        $('div.spinner-div').html('<div class="spinner">Loading...</div>');
 
         //Store serial and status information into json
         var dataObj={serial:$(this).attr('id'), status:$(this).data('status')};
@@ -48,6 +49,7 @@ $(document).ready(function(){
         //Send status to server
          $.ajax({url: '/GnomeAPI/changeGnome', data:dataObj, method: 'POST'})
         .done(function() {
+            $('div.spinner-div').empty();
             e.preventDefault();
         });
      });
